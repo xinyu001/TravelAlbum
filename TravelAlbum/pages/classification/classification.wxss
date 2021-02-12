@@ -1,0 +1,74 @@
+.main-container{
+  height: 100vh;
+}
+.people-container{
+  height: 20%;
+  width: 100%;
+}
+.scroll-people-container{
+  white-space: nowrap; 
+  display: flex;
+}
+.scroll-people-item{
+  border-radius:50%;
+  display: inline-block;
+  height: 70px;
+  width: 70px;
+  margin: 10px;
+  background-color: green;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, .12), 0 0 6px rgba(0, 0, 0, .04)
+}
+.scroll-people-image{
+  height: 100%;
+  width: 100%;
+  border-radius:50%;
+}
+.location-container{
+  height: 40%;
+  width: 100%;
+}
+.scroll-location-container{
+  white-space: nowrap; 
+  display: flex;
+}
+.scroll-location-item{
+  display: inline-block;
+  height: 150px;
+  width: 150px;
+  border-radius:5px;
+  margin: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, .12), 0 0 6px rgba(0, 0, 0, .04)
+}
+.scroll-location-image{
+  height: 150px;
+  width: 150px;
+  border-radius:8px;
+}
+.scroll-location-text{
+  display: block;
+  text-align: center;
+}
+.event-container{
+  width: 100%;
+}
+.scroll-event-container{
+  white-space: nowrap; 
+  display: flex;
+}
+.scroll-event-item{
+  display: inline-block;
+  height: 150px;
+  width: 150px;
+  border-radius:5px;
+  margin: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, .12), 0 0 6px rgba(0, 0, 0, .04)
+}
+.scroll-event-image{
+  height: 150px;
+  width: 150px;
+  border-radius:8px;
+}
+.scroll-event-text{
+  display: block;
+  text-align: center;
+}

@@ -1,0 +1,46 @@
+{
+  "pages":[
+    "pages/recommend/recommend",
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/album/album",
+    "pages/classification/classification",
+    "pages/my/my",
+    "pages/function/openalbum/openablum"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "首页",
+    "navigationBarTextStyle":"black"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json",
+  "tabBar": {
+    "list": [{
+      "pagePath": "pages/recommend/recommend",
+      "text": "发现",
+      "selectedIconPath": "images/icons/selected/discover.png",
+      "iconPath": "images/icons/notSelected/discover.png"
+    },
+    {
+      "pagePath": "pages/album/album",
+      "text": "相册",
+      "selectedIconPath": "images/icons/selected/album.png",
+      "iconPath": "images/icons/notSelected/album.png"
+    },{
+      "pagePath": "pages/classification/classification",
+      "text": "智能分类",
+      "selectedIconPath": "images/icons/selected/classification.png",
+      "iconPath": "images/icons/notSelected/classification.png"
+    },{
+      "pagePath": "pages/my/my",
+      "text": "我的",
+      "selectedIconPath": "images/icons/selected/my.png",
+      "iconPath": "images/icons/notSelected/my.png"
+    }
+  ],
+  "color":"#8a8a8a",
+  "selectedColor":"#1296db"
+  }
+}

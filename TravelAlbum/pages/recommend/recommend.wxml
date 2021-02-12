@@ -1,0 +1,11 @@
+<view class="main-container">
+<text>发现\n</text>
+
+<button bindtap="totest" type="primary">
+测试
+</button>
+
+<button bindtap="openablum" type="primary">
+打开相册
+</button>
+</view>

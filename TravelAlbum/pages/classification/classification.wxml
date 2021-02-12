@@ -1,0 +1,32 @@
+<view class="main-container"> 
+<view class="people-container"><text>人物:</text>
+<scroll-view class="scroll-people-container" scroll-x="true">
+  <view class="scroll-people-item"><image class="scroll-people-image" src="{{peoplepath}}"></image></view>
+  <view class="scroll-people-item"><image class="scroll-people-image" src="{{peoplepath}}"></image></view>
+  <view class="scroll-people-item"><image class="scroll-people-image" src="{{peoplepath}}"></image></view>
+  <view class="scroll-people-item"><image class="scroll-people-image" src="{{peoplepath}}"></image></view>
+  <view class="scroll-people-item"><image class="scroll-people-image" src="{{peoplepath}}"></image></view>
+</scroll-view>
+</view>
+
+<view class="location-container"><text>地点:</text>
+<scroll-view class="scroll-location-container" scroll-x="true">
+    <view class="scroll-location-item"><image class="scroll-location-image" src="{{locationpath}}"></image><text class="scroll-location-text">台州</text></view>
+    <view class="scroll-location-item"><image class="scroll-location-image" src="{{locationpath}}"></image><text class="scroll-location-text">上海</text>
+    </view>
+    <view class="scroll-location-item"><image class="scroll-location-image" src="{{locationpath}}"></image><text class="scroll-location-text">南京</text></view>
+
+</scroll-view>
+</view>
+
+<view class="event-container"><text>事件:</text>
+  <scroll-view class="scroll-event-container" scroll-x="true">
+    <view class="scroll-event-item"><image class="scroll-event-image" src="{{eventpath}}"></image><text class="scroll-event-text">事件1</text></view>
+
+    <view class="scroll-event-item"><image class="scroll-event-image" src="{{eventpath}}"></image><text class="scroll-event-text">事件2</text></view>
+    
+    <view class="scroll-event-item"><image class="scroll-event-image" src="{{eventpath}}"></image><text class="scroll-event-text">事件3</text></view>
+</scroll-view>
+</view>
+
+</view>

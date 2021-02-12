@@ -1,0 +1,64 @@
+.main-container{
+  height: 100vh;
+}
+.newalbum-container{
+  height:22%;
+  width: 100%;
+}
+.newalbum{
+  width: 100%;
+}
+.newalbum-item{
+  display: inline-block;
+  height: 80px;
+  width: 80px;
+  border-radius:5px;
+  margin: 10px;
+  background-size: cover;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, .12), 0 0 6px rgba(0, 0, 0, .04)
+}
+.newalbum-image{
+  position: relative;
+  display: block;
+  top: 10%;
+  left: 20%;
+  height: 60%;
+  width: 60%;
+}
+.newalbum-text{
+  position: relative;
+  display: block;
+  top: 10%;
+  left: 10%;
+}
+.album-container{
+  height:38%;
+}
+.album{
+  height:260rpx;
+  width: 260rpx;
+
+}
+.scroll-container{
+  white-space: nowrap; 
+  display: flex;
+}
+
+.scroll-container-item{
+  display: inline-block;
+  height: 150px;
+  width: 150px;
+  border-radius:5px;
+  margin: 10px;
+  background-size: cover;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, .12), 0 0 6px rgba(0, 0, 0, .04)
+}
+.scroll-view-item-image{
+  height: 100%;
+  width: 100%;
+  border-radius:5px;
+}
+.scroll-view-item-text{
+  display: block;
+  text-align: center;
+}
