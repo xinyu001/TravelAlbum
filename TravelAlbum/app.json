@@ -6,7 +6,8 @@
     "pages/album/album",
     "pages/classification/classification",
     "pages/my/my",
-    "pages/function/openalbum/openablum"
+    "pages/function/openalbum/openalbum",
+    "pages/function/newalbum/newalbum"
   ],
   "window":{
     "backgroundTextStyle":"light",

@@ -1,0 +1,27 @@
+.main-container{
+  height: 100vmax;
+}
+
+.title-container{
+  height: 20%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.title{
+  text-justify: auto;
+}
+
+
+.imagecontainer{
+  width: 100%;
+  display: flex;
+  white-space: nowrap;
+}
+.image{
+  width: 150px;
+  height: 150px;
+  display: inline-block;
+  margin: 10px;
+}

@@ -2,7 +2,7 @@
 <view class="newalbum-container">
 <text>新建相册:</text>
 <view class="newalbum">
-<view class="newalbum-item" bindtap="f1">
+<view class="newalbum-item" bindtap="newalbum">
   <image  class="newalbum-image" src="/images/icons/album.png"></image>
   <text class="newalbum-text">普通相册</text>
 </view>
@@ -13,29 +13,17 @@
 </view>
 </view>
 
-<view class="album-container">
-<view>
-<text>本机相册:</text>
-</view>
-<scroll-view scroll-x="true" class="scroll-container" >
-  <view class="scroll-container-item" bindtap="f3">
-  <image  class="scroll-view-item-image" src="cloud://test1-2g8apckr01622f46.7465-test1-2g8apckr01622f46-1304983618/images/photos/1.jpeg"></image>
-<text class="scroll-view-item-text">本机相册1</text>
-</view>
-
-
-  <view class="scroll-container-item" bindtap="f3"><image  class="scroll-view-item-image" src="cloud://test1-2g8apckr01622f46.7465-test1-2g8apckr01622f46-1304983618/images/photos/2.jpeg"></image><text class="scroll-view-item-text">本机相册2</text></view>
-  <view class="scroll-container-item" bindtap="f3"><image  class="scroll-view-item-image" src="cloud://test1-2g8apckr01622f46.7465-test1-2g8apckr01622f46-1304983618/images/photos/3.jpeg"></image><text class="scroll-view-item-text">本机相册3</text></view>
-  </scroll-view>
-</view>
 
 <view class="album-container" >
 <text>云端相册:</text>
-<scroll-view scroll-x="true" class="scroll-container">
-  <view class="scroll-container-item" bindtap="f6"><image  class="scroll-view-item-image" src="cloud://test1-2g8apckr01622f46.7465-test1-2g8apckr01622f46-1304983618/images/photos/5.jpeg"></image><text class="scroll-view-item-text">相册1</text></view>
-  <view class="scroll-container-item" bindtap="f6"><image  class="scroll-view-item-image" src="cloud://test1-2g8apckr01622f46.7465-test1-2g8apckr01622f46-1304983618/images/photos/6.jpeg"></image><text class="scroll-view-item-text">相册2</text></view>
-  <view class="scroll-container-item" bindtap="f6"><image  class="scroll-view-item-image" src="cloud://test1-2g8apckr01622f46.7465-test1-2g8apckr01622f46-1304983618/images/photos/8.jpg"></image><text class="scroll-view-item-text">相册3</text></view>
-  </scroll-view>
+<scroll-view  scroll-x="true" class="scroll-container">
+
+  <view  wx:for="{{albumlist}}"  class="scroll-container-item" >
+    <image  id="{{item.albumid}}" class="scroll-view-item-image" src="{{item.coverimagepath}}" bindtap="openalbum"></image>
+    <text class="scroll-view-item-text">{{item.albumname}}</text>
+  </view>
+
+</scroll-view>
 </view>
 
 </view>

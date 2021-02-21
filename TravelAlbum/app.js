@@ -1,6 +1,7 @@
 // app.js
 App({
   onLaunch() {
+
     // 展示本地存储能力
     const logs = wx.getStorageSync('logs') || []
     logs.unshift(Date.now())
@@ -35,7 +36,8 @@ App({
   },
   globalData: {
     userInfo: null,
-    cloudPath:"cloud://test1-2g8apckr01622f46.7465-test1-2g8apckr01622f46-1304983618"
+    userid:"",
+    user:{}
     
   }
 })

@@ -1,0 +1,18 @@
+
+<form>
+<view class="con">
+<view class="table">
+    <view class="tr bg-g" >
+      <view class="td">相册名:</view>
+      <view class="td"><input placeholder="请输入相册名" value="鱼的记忆"></input></view>
+    </view> 
+ <view class="tr" >
+      <view class="td">相册类型:</view>
+      <view class="td"><input placeholder="请输入寝室号" value="普通相册"></input></view>
+    </view>
+
+</view>
+
+<button bindtap="f1" type="primary">确定</button>
+</view>
+</form>

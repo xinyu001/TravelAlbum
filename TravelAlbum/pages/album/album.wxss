@@ -2,7 +2,7 @@
   height: 100vh;
 }
 .newalbum-container{
-  height:22%;
+  height:30%;
   width: 100%;
 }
 .newalbum{

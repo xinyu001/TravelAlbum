@@ -1,5 +1,7 @@
 <view class="main-container">
-<text>发现\n</text>
+  <view class="search">
+    <image  class="search-image" src="/images/icons/搜索.png" bindtap="tosearch"></image>
+  </view>
 
 <button bindtap="totest" type="primary">
 测试
@@ -7,5 +9,8 @@
 
 <button bindtap="openablum" type="primary">
 打开相册
+</button>
+<button bindtap="newimage" type="primary">
+上传图片
 </button>
 </view>

@@ -1,5 +1,22 @@
 .main-container{
   display: flex;
   flex-direction: column;
-
+}
+.search{
+    /*flex 布局*/
+    display: flex;
+    /*实现垂直居中*/
+    align-items: center;
+    /*实现水平居中*/
+   /* justify-content: center;*/
+}
+.search-image{
+  width: 40px;
+  height: 40px;
+}
+.search-textarea{
+  height: 30px;
+  width: 300px;
+  border-radius:5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, .12), 0 0 6px rgba(0, 0, 0, .04);
 }

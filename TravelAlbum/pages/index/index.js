@@ -7,7 +7,11 @@ Page({
     motto: 'Hello World',
     userInfo: {},
     hasUserInfo: false,
-    canIUse: wx.canIUse('button.open-type.getUserInfo')
+    canIUse: wx.canIUse('button.open-type.getUserInfo'),
+    code:"",
+    openid:"",
+    user:""
+
   },
   // 事件处理函数
   bindViewTap() {
@@ -51,18 +55,67 @@ Page({
       hasUserInfo: true
     })
   },
-  test:function(){
+  getcode:function(){
     var that=this;
-    wx.request({
-      url: 'http://localhost:8080',
-      success(res){
-        console.log('查询成功')
-        console.log(res.data)
+    wx.login({
+      success (res) {
         that.setData({
-          motto:res.data
+          code: res.code
         })
-
+        console.log("code:"+that.data.code)
+        that.getopenid()
+        
       }
     })
+
+  },
+  getopenid:function(){
+    var that=this
+    wx.request({
+      url: 'http://localhost:8080/Get/OpenId',
+      method:'GET',
+      data: {
+        code:this.data.code
+      },
+      success(res){
+        that.setData({
+          openid: res.data.openid
+        })
+        console.log("openid:"+res.data.openid)
+      }
+  })
+  },
+  getuser:function(){
+    var that=this
+    wx.request({
+      url: 'http://localhost:8080/Get/User',
+      method:'GET',
+      data: {
+        openid:that.data.openid
+      },
+      success(res){
+        that.setData({
+          user:res.data
+        })
+        console.log(res.data)
+      }
+    }) 
+  },
+  getalbums:function () {
+    var that=this
+    wx.request({
+      url: 'http://localhost:8080/Get/Albums',
+      method:'GET',
+      data: {
+        userid:that.data.user.userid
+      },
+      success(res){
+        that.setData({
+          cloudablumlist:res.data
+        })
+        console.log(res.data)
+      }
+    }) 
   }
+
 })

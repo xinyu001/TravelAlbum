@@ -1,0 +1,11 @@
+<view class="search">
+    <image  class="search-image" src="/images/icons/搜索.png"></image>
+    <textarea class="search-textarea" placeholder="搜索" bindtap="tosearch"></textarea>
+</view>
+
+<view class="search-tip">
+  <view class="tip-item"><text>试试这样搜索:</text></view>
+  <view class="tip-item"><text>标记过的人物名称</text></view>
+  <view class="tip-item"><text>拍摄照片中的城市</text></view>
+  <view class="tip-item"><text>照片中的事物</text></view>
+</view>
