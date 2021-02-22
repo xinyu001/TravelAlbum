@@ -1,6 +1,9 @@
 <view class="main-container">
 <view class="title-container">
 <text class="title" bindtap="f1">{{album.albumname}}</text>
+<button bindtap="newimage" type="primary">
+上传图片
+</button>
 </view>
 <view class="image-container" wx:for="{{imagelist}}" >
 <image class="image" src="{{item.path}}" bindtap="f1"></image>

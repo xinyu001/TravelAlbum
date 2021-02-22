@@ -6,14 +6,6 @@ Page({
   },
   onLoad(){
     this.getalbums()
-// this.getcode()
-// var that=this
-// setTimeout(function() {
-//   that.getuser()
-//   setTimeout(function(){
-//     that.getalbums()
-//   },500)
-// }, 1000) 
 
   },
   getcode:function(){
@@ -68,8 +60,7 @@ Page({
       url: 'http://localhost:8080/Get/Albums',
       method:'GET',
       data: {
-        //userid:that.data.user.userid
-        userid:app.globalData.userid
+        userid:app.globalData.user.userid
       },
       success(res){
         that.setData({
