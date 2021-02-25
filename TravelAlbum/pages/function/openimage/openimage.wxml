@@ -1,0 +1,13 @@
+<!--pages/function/openimage/openimage.wxml-->
+<image class="" src="{{image.path}}">
+</image>
+
+
+<view>
+  <button bindtap="deleteimage" type="primary">
+    删除
+  </button>
+  <button bindtap="doloadimage" type="primary">
+    下载
+  </button>
+</view>

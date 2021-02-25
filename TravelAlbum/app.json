@@ -7,7 +7,8 @@
     "pages/classification/classification",
     "pages/my/my",
     "pages/function/openalbum/openalbum",
-    "pages/function/newalbum/newalbum"
+    "pages/function/newalbum/newalbum",
+    "pages/function/openimage/openimage"
   ],
   "window":{
     "backgroundTextStyle":"light",

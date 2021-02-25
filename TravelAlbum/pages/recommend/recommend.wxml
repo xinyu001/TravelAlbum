@@ -14,3 +14,14 @@
 上传图片
 </button>
 </view>
+<view class="album-container" >
+<text>共享相册:</text>
+<scroll-view  scroll-x="true" class="scroll-container">
+
+  <view  wx:for="{{sharealbumlist}}"  class="scroll-container-item" >
+    <image  id="{{item.albumid}}" class="scroll-view-item-image" src="{{item.coverimagepath}}" bindtap="openalbum"></image>
+    <text class="scroll-view-item-text">{{item.albumname}}</text>
+  </view>
+
+</scroll-view>
+</view>

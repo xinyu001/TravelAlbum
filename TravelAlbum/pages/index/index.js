@@ -1,7 +1,7 @@
 // index.js
 // 获取应用实例
-const app = getApp()
-
+var app = getApp()
+const url=app.globalData.url
 Page({
   data: {
     motto: 'Hello World',

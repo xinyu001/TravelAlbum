@@ -4,8 +4,14 @@
 <button bindtap="newimage" type="primary">
 上传图片
 </button>
+<button bindtap="deletealbum" type="primary">
+  删除相册
+</button>
+<button bindtap="settingalbum" type="primary">
+  相册设置
+</button>
 </view>
 <view class="image-container" wx:for="{{imagelist}}" >
-<image class="image" src="{{item.path}}" bindtap="f1"></image>
+<image id="{{item.imageid}}" class="image" src="{{item.path}}" bindtap="openimage"></image>
 </view>
 </view>

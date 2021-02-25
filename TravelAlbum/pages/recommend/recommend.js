@@ -4,6 +4,7 @@ Page({
     "albumlist":[]
   },
   onLoad(){
+    this.getsharealbum()
     this.getcode()
     var that=this
     setTimeout(function() {
@@ -107,5 +108,23 @@ var imagetype=code
         console.log(res.data)
       }
     }) 
-  }
+  },
+  getsharealbum:function(){
+    var that=this
+    wx.request({
+      url: 'http://localhost:8080/Get/ShareAlbum',
+      success(res){
+        console.log(res.data)
+        that.setData({
+          sharealbumlist:res.data
+        })
+      }
+    })
+  },
+  openalbum:function(item){
+    console.log(item.target.id)
+    wx.navigateTo({
+      url: '/pages/function/openalbum/openalbum?albumid='+item.target.id
+    })
+  },
 })  

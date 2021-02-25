@@ -1,4 +1,5 @@
-var app=getApp()
+var app = getApp()
+const url=app.globalData.url
 Page({
   data:{
   "imagelist":[]
@@ -85,5 +86,35 @@ var imagename=code
     })
 
   },
+  openimage:function(item){
+    console.log("imageid:"+item.target.id)
+    wx.navigateTo({
+      url: '/pages/function/openimage/openimage?imageid='+item.target.id
+    })
+  },
+  deletealbum:function(){
+    var that=this
+    wx.showModal({
+      title: '提示',
+      content: '确定删除？',
+      success: function (res) {
+        if (res.confirm) {//这里是点击了确定以后
+          console.log('用户点击确定')  
+          wx.request({
+            url: 'http://localhost:8080/Set/DeleteAlbum',
+            method:'GET',
+            data: {
+              albumid:that.data.albumid
+            },
+            success(res){
+              console.log(res.data)
+            }
+          })
+        } else {//这里是点击了取消以后
+          console.log('用户点击取消')
+        }}
+    })
+   
+  }
    
 })

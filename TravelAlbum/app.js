@@ -37,7 +37,8 @@ App({
   globalData: {
     userInfo: null,
     userid:"",
-    user:{}
+    user:{},
+    url:"http://localhost:8080/"
     
   }
 })

@@ -1,4 +1,5 @@
 var app = getApp()
+const url=app.globalData.url
 // const path="cloud://test1-2g8apckr01622f46.7465-test1-2g8apckr01622f46-1304983618"
 Page({
   data:{
@@ -25,7 +26,7 @@ Page({
   getopenid:function(){
     var that=this
     wx.request({
-      url: 'http://localhost:8080/Get/OpenId',
+      url: url+'Get/OpenId',
       method:'GET',
       data: {
         code:this.data.code
@@ -57,7 +58,7 @@ Page({
   getalbums:function () {
     var that=this
     wx.request({
-      url: 'http://localhost:8080/Get/Albums',
+      url: url+'Get/Albums',
       method:'GET',
       data: {
         userid:app.globalData.user.userid
