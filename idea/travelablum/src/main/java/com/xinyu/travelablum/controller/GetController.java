@@ -72,6 +72,15 @@ public class GetController {
         return getService.getimage(imageid);
     }
 
+    @GetMapping(value = "/Search")
+    public List<Image> Search(@RequestParam(value = "label") String label,
+                              @RequestParam(value = "ai") String ai,
+                              @RequestParam(value = "location") String location,
+                              @RequestParam(value = "userid") String userid) throws Exception {
+        System.out.println("搜索中");
+        return getService.search(label,ai,location,userid);
+    }
+
 
 
 

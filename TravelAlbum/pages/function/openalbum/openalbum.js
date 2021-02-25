@@ -12,7 +12,7 @@ Page({
     var that=this
     wx.request({
      
-      url:'http://localhost:8080/Get/Images',
+      url: url+'Get/Images',
       method:'GET',
       data:{
         albumid:that.data.albumid
@@ -28,7 +28,7 @@ Page({
   getalbum:function () {
     var that=this
     wx.request({
-      url: 'http://localhost:8080/Get/Album',
+      url:  url+'Get/Album',
       method:'GET',
       data: {
         albumid:that.data.albumid
@@ -67,12 +67,13 @@ var imagename=code
               ImageName:imagename
             })
             wx.request({
-              url: 'http://localhost:8080/Upload/Image',
+              url:  url+'Upload/Image',
               method:'GET',
               data:{
                 albumid:that.data.albumid,
                 imagename:that.data.ImageName,
-                path:that.data.fileID
+                path:that.data.fileID,
+                ai:"ai测试"
               },
               success(){
                 console.log("上传成功")
@@ -101,7 +102,7 @@ var imagename=code
         if (res.confirm) {//这里是点击了确定以后
           console.log('用户点击确定')  
           wx.request({
-            url: 'http://localhost:8080/Set/DeleteAlbum',
+            url:  url+'Set/DeleteAlbum',
             method:'GET',
             data: {
               albumid:that.data.albumid

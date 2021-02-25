@@ -10,4 +10,7 @@
   <button bindtap="doloadimage" type="primary">
     下载
   </button>
+  <button bindtap="setcoverimage" type="primary">
+    设置为封面
+  </button>
 </view>

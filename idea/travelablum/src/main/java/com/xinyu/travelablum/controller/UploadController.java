@@ -20,9 +20,10 @@ public class UploadController {
     @GetMapping(value = "/Image")
     public int UploadImage(@RequestParam(value = "albumid") String albumid,
                            @RequestParam(value = "imagename") String imagename,
-                           @RequestParam(value = "path") String path) throws Exception {
+                           @RequestParam(value = "path") String path,
+                           @RequestParam(value = "ai") String ai) throws Exception {
         System.out.println("图片上传中");
-        return uploadService.newimage(albumid,imagename,path);
+        return uploadService.newimage(albumid,imagename,path,ai);
     }
 
     @GetMapping(value = "/Album")

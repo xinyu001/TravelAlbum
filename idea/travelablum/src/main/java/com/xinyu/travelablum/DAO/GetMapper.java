@@ -29,7 +29,21 @@ public interface GetMapper {
         @Select("select * from image where imageid=#{imageid}")
         Image getimage(@Param("imageid") String imageid);
 
+        @Select("select * from image where label=#{label} and albumid in(SELECT albumid from user where userid=#{userid} and status='normal')and status='normal' UNION " +
+                "select * from image where ai=#{ai} and albumid in(SELECT albumid from user where userid=#{userid} and status='normal')and status='normal' UNION " +
+                "select * from image where location=#{location} and albumid in(SELECT albumid from user where userid=#{userid} and status='normal')and status='normal'")
+        List<Image> search(@Param("label") String label,@Param("ai") String ai,@Param("location") String location,@Param("userid") String userid);
+
+        @Insert("insert into user(openid) value(#{openid})")
+        int newuser(@Param(value ="openid") String openid);
+
+
+//        @Select("select * from image where label=#{label} and albumid in(SELECT albumid from user where userid=#{userid} and status='normal') and status='normal'" )
+//        @Select("select * from image where label=#{label} and status='normal'" )
 //
+//        List<Image> search(@Param("label") String label,@Param("ai") String ai,@Param("location") String location,@Param("userid") String userid);
+
+
 //        @Insert("insert into image(albumid,imagename,path) values(#{albumid},#{imagename},#{path})")
 //        int insert(@Param("name") String name,@Param("imagename") String imagename,@Param("path") String path);
 //        values (#{id,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}

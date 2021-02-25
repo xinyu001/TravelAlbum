@@ -22,7 +22,7 @@ Page({
   getimage:function(){
     var that=this
     wx.request({
-      url: 'http://localhost:8080/Get/Image',
+      url: url+'Get/Image',
       method:'GET',
       data: {
         imageid:that.data.imageid
@@ -87,7 +87,7 @@ Page({
   deleteimage:function(){
     var that=this
     wx.request({
-      url: 'http://localhost:8080/Set/DeleteImage',
+      url: url+'Set/DeleteImage',
       method:'GET',
       data: {
         imageid:that.data.image.imageid

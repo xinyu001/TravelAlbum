@@ -72,7 +72,7 @@ Page({
   getopenid:function(){
     var that=this
     wx.request({
-      url: 'http://localhost:8080/Get/OpenId',
+      url: url+'Get/OpenId',
       method:'GET',
       data: {
         code:this.data.code
@@ -88,7 +88,7 @@ Page({
   getuser:function(){
     var that=this
     wx.request({
-      url: 'http://localhost:8080/Get/User',
+      url: url+'Get/User',
       method:'GET',
       data: {
         openid:that.data.openid
@@ -104,7 +104,7 @@ Page({
   getalbums:function () {
     var that=this
     wx.request({
-      url: 'http://localhost:8080/Get/Albums',
+      url: url+'Get/Albums',
       method:'GET',
       data: {
         userid:that.data.user.userid

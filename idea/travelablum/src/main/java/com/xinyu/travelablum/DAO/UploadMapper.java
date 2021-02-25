@@ -9,8 +9,9 @@ import org.apache.ibatis.annotations.Param;
 public interface UploadMapper {
 
 
-    @Insert("insert into image(albumid,imagename,path) values(#{albumid},#{imagename},#{path})")
-    int newimage(@Param("albumid") String albumid,@Param("imagename") String imagename,@Param("path") String path);
+    @Insert("insert into image(albumid,imagename,path,ai) values(#{albumid},#{imagename},#{path},#{ai})")
+    int newimage(@Param("albumid") String albumid,@Param("imagename") String imagename,
+                 @Param("path") String patt,@Param("ai") String ai);
 
     @Insert("insert into album(albumname,userid) values(#{albumname},#{userid})")
     int newalbum(@Param("albumname") String albumname,@Param("userid") String userid);

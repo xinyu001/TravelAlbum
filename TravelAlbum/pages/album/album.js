@@ -42,7 +42,7 @@ Page({
   getuser:function(){
     var that=this
     wx.request({
-      url: 'http://localhost:8080/Get/User',
+      url:  url+'Get/User',
       method:'GET',
       data: {
         openid:that.data.openid

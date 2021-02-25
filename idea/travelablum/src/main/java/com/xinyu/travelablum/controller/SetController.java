@@ -25,4 +25,42 @@ public class SetController {
         return setService.deletealbum(albumid);
     }
 
+    @GetMapping(value = "/UpdateUser")
+    public int UpdateUser(@RequestParam(value ="name") String name,
+                          @RequestParam(value="phonenumber") String phonenumber,
+                          @RequestParam(value = "userid") String userid
+                          ) throws  Exception{
+        System.out.println("更新用户信息");
+        return setService.updateuser(name,phonenumber,userid);
+    }
+
+    @GetMapping(value = "/UpdateImage")
+    public int UpdateImage(@RequestParam(value = "imageid") String imageid,
+                           @RequestParam(value = "label") String label,
+                           @RequestParam(value = "location") String location,
+                           @RequestParam(value = "ai") String ai)throws Exception{
+        System.out.println("更新照片信息");
+        return setService.updateimage(imageid,label,ai,location);
+    }
+
+    @GetMapping(value = "/UpdateAlbum")
+    public int UpdateAlbum(
+            @RequestParam(value = "albumtype") String albumtype,
+            @RequestParam(value = "description") String description,
+            @RequestParam(value = "albumid") String albumid
+    )throws Exception{
+        System.out.println("更新相册信息");
+        return setService.updatealbum(albumtype,description,albumid);
+    }
+
+    @GetMapping(value = "/CoverImage")
+    public int CoverImage(@RequestParam(value = "albumid") String albumid,
+                          @RequestParam(value = "coverimagepath" )String coverimagepath
+    )throws Exception{
+        System.out.println("设置封面");
+        return setService.coverimage(albumid,coverimagepath);
+    }
+
+
+
 }

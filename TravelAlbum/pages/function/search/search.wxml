@@ -1,6 +1,6 @@
 <view class="search">
     <image  class="search-image" src="/images/icons/搜索.png"></image>
-    <textarea class="search-textarea" placeholder="搜索" bindtap="tosearch"></textarea>
+    <input class="search-input" placeholder="搜索" bindtap="tosearch"></input>
 </view>
 
 <view class="search-tip">

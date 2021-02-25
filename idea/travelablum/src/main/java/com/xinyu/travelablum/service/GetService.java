@@ -14,20 +14,17 @@ public class GetService {
     @Autowired
     private GetMapper getMapper;  //这里会有报错，不用管
 
-//    public String getopenid(String code) {
-//        System.out.println("code:"+code);
-//        return "openid"+code;
-//    }
-
 
 
     public User getuser(String openid) {
+       User user=getMapper.getuser(openid);
+       if(user==null){
+           getMapper.newuser(openid);
+       }
         return getMapper.getuser(openid);
     }
 
-    public List<Album> getablums(String userid) {
-        return getMapper.getalbums(userid);
-    }
+    public List<Album> getablums(String userid) { return getMapper.getalbums(userid); }
 
     public Album getablum(String albumid) {
         return getMapper.getalbum(albumid);
@@ -40,7 +37,10 @@ public class GetService {
     public List<Image> getimages(String albumid) {
         return getMapper.getimages(albumid);
     }
+
     public Image getimage(String imageid) {
         return getMapper.getimage(imageid);
     }
+
+    public List<Image> search(String label,String ai,String location,String userid) { return getMapper.search(label,ai,location,userid); }
 }

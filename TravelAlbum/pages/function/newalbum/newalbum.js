@@ -19,7 +19,7 @@ Page({
         if (res.confirm) {//这里是点击了确定以后
           console.log('用户点击确定')
           wx.request({
-            url: 'http://localhost:8080/Upload/Album',
+            url: url+'Upload/Album',
             data:{
               userid:app.globalData.user.userid,
               albumname:that.data.value1

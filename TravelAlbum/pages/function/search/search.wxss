@@ -10,7 +10,7 @@
 width: 40px;
 height: 40px;
 }
-.search-textarea{
+.search-input{
 height: 30px;
 width: 300px;
 border-radius:5px;

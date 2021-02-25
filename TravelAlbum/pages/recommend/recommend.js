@@ -1,4 +1,5 @@
 var app = getApp()
+const url=app.globalData.url
 Page({  
   data:{
     "albumlist":[]
@@ -6,10 +7,10 @@ Page({
   onLoad(){
     this.getsharealbum()
     this.getcode()
-    var that=this
-    setTimeout(function() {
-      that.getuser()
-    }, 1000) 
+    // var that=this
+    // setTimeout(function() {
+    //   that.getuser()
+    // }, 1000) 
     
   },
   totest: function() {
@@ -76,7 +77,7 @@ var imagetype=code
   getopenid:function(){
     var that=this
     wx.request({
-      url: 'http://localhost:8080/Get/OpenId',
+      url: url+'Get/OpenId',
       method:'GET',
       data: {
         code:this.data.code
@@ -86,13 +87,14 @@ var imagetype=code
           openid: res.data.openid
         })
         console.log("openid:"+res.data.openid)
+        that.getuser()
       }
   })
   },
   getuser:function(){
     var that=this
     wx.request({
-      url: 'http://localhost:8080/Get/User',
+      url:url+'Get/User',
       method:'GET',
       data: {
         openid:that.data.openid
@@ -112,7 +114,7 @@ var imagetype=code
   getsharealbum:function(){
     var that=this
     wx.request({
-      url: 'http://localhost:8080/Get/ShareAlbum',
+      url: url+'Get/ShareAlbum',
       success(res){
         console.log(res.data)
         that.setData({
