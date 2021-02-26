@@ -3,7 +3,7 @@
     <image  class="search-image" src="/images/icons/搜索.png" bindtap="tosearch"></image>
   </view>
 
-<button bindtap="totest" type="primary">
+<!-- <button bindtap="totest" type="primary">
 测试
 </button>
 
@@ -12,7 +12,7 @@
 </button>
 <button bindtap="newimage" type="primary">
 上传图片
-</button>
+</button> -->
 </view>
 <view class="album-container" >
 <text>共享相册:</text>

@@ -10,7 +10,7 @@ import java.util.Date;
 @RestController
 public class HelloWorldController {
 
-    @RequestMapping("/HelloWord")
+    @RequestMapping("")
     public String HelloWorld(){
         Date date = new Date();
 
@@ -20,6 +20,7 @@ public class HelloWorldController {
 
         System.out.println("连接成功");
         return df.format(date)+ "  Hello World!";
+//        return "helloword";
 
 
 

@@ -7,7 +7,7 @@
 <button bindtap="deletealbum" type="primary">
   删除相册
 </button>
-<button bindtap="settingalbum" type="primary">
+<button bindtap="albumsetting" type="primary">
   相册设置
 </button>
 </view>

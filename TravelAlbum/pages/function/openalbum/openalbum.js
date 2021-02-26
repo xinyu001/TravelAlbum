@@ -116,6 +116,11 @@ var imagename=code
         }}
     })
    
+  },
+  albumsetting:function(){
+    wx.navigateTo({
+      url: '/pages/function/albumsetting/albumsetting',
+    })
   }
    
 })

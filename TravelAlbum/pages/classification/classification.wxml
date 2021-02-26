@@ -17,7 +17,7 @@
 </scroll-view>
 </view>
 
-<view class="event-container"><text>事件:</text>
+<!-- <view class="event-container"><text>事件:</text>
   <scroll-view class="scroll-event-container" scroll-x="true">
     <view class="scroll-event-item" wx:for="{{eventlist}}">
       <image class="scroll-event-image" src="{{item.firstimagesrc}}"></image>
@@ -25,6 +25,6 @@
     </view>
 
 </scroll-view>
-</view>
+</view> -->
 
 </view>

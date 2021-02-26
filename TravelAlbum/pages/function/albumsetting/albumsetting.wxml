@@ -1,0 +1,33 @@
+<view class="con">
+<view class="table">
+   
+    <view class="tr bg-g" >
+      <view class="td">相册名:</view>
+      <view class="td"><input placeholder="请输入相册名" value="{{}}"></input></view>
+    </view>      
+ 
+    <view class="tr" >
+      <view class="td">是否共享:</view>
+      <view class="td">
+        <picker bindchange="bindPickerChange" value="{{}}" range="{{}}">
+          <text>{{}}</text>
+        </picker>
+      </view>
+    </view>  
+    <view class="section">
+  <view class="section__title">普通选择器</view>
+  <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+    <view class="picker">
+      当前选择：{{array[index]}}
+    </view>
+  </picker>
+</view>
+    <view class="tr bg-g" style="height:500rpx" >
+      <view class="td">描述:</view>
+      <view class="td">
+        <input placeholder="请输入描述" value="{{}}"></input>
+      </view>
+    </view> 
+</view>
+<button bindtap="f1" class="change-button" type="primary">确定</button>
+</view>
