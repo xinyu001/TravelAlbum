@@ -14,7 +14,8 @@ Page({
    */
   onLoad: function (options) {
       this.setData({
-        imageid:options.imageid
+        imageid:options.imageid,
+        albumid:options.albumid
       })
       console.log(this.data.imageid)
       this.getimage()
@@ -36,52 +37,7 @@ Page({
     }) 
   },
 
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
   onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
 
   },
   deleteimage:function(){
@@ -116,5 +72,24 @@ Page({
       }
     })
    
+  },
+  setimage:function(){
+    wx.navigateTo({
+      url: '/pages/function/setimage/setimage?imageid='+this.data.imageid,
+    })
+  },
+  setcoverimage:function(){
+    var that=this
+    wx.request({
+      url: url+"Set/CoverImage",
+      method:'GET',
+      data:{
+        albumid:that.data.albumid,
+        coverimagepath:that.data.image.path
+      },
+      success(){
+        console.log('设置成功')
+      }
+    })
   }
 })

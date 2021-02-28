@@ -90,7 +90,7 @@ var imagename=code
   openimage:function(item){
     console.log("imageid:"+item.target.id)
     wx.navigateTo({
-      url: '/pages/function/openimage/openimage?imageid='+item.target.id
+      url: '/pages/function/openimage/openimage?imageid='+item.target.id+'&albumid='+this.data.albumid
     })
   },
   deletealbum:function(){

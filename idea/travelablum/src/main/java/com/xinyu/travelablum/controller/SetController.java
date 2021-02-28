@@ -47,10 +47,11 @@ public class SetController {
     public int UpdateAlbum(
             @RequestParam(value = "albumtype") String albumtype,
             @RequestParam(value = "description") String description,
-            @RequestParam(value = "albumid") String albumid
+            @RequestParam(value = "albumid") String albumid,
+            @RequestParam(value = "albumname" ) String albumname
     )throws Exception{
         System.out.println("更新相册信息");
-        return setService.updatealbum(albumtype,description,albumid);
+        return setService.updatealbum(albumtype,description,albumid,albumname);
     }
 
     @GetMapping(value = "/CoverImage")

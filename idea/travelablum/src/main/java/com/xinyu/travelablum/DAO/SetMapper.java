@@ -15,8 +15,9 @@ public interface SetMapper {
     @Update("UPDATE image SET label=#{label},ai=#{ai},location=#{location} WHERE imageid=#{imageid}")
     int updateimage(@Param("imageid") String imageid,@Param("label") String label,@Param("ai") String ai,@Param("location") String location);
 
-    @Update("UPDATE album SET albumtype=#{albumtype},description=#{description} WHERE albumid=#{albumid}")
-    int updatealbum(@Param("albumtype") String albumtype,@Param("description") String description,@Param("albumid") String albumid);
+    @Update("UPDATE album SET albumtype=#{albumtype},description=#{description},albumname=#{albumname} WHERE albumid=#{albumid}")
+    int updatealbum(@Param("albumtype") String albumtype,@Param("description") String description,
+                    @Param("albumid") String albumid,@Param("albumname")String albumname);
 
     @Update("UPDATE user SET name=#{name},phonenumber=#{phonenumber} where userid=#{userid}")
     int updateuser(@Param("name") String name,@Param("phonenumber") String phonenumber,@Param("userid") String userid);

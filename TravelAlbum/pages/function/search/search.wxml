@@ -1,6 +1,6 @@
 <view class="search">
     <image  class="search-image" src="/images/icons/搜索.png"></image>
-    <input class="search-input" placeholder="搜索" bindtap="tosearch"></input>
+    <input class="search-input" placeholder="搜索" model:value="{{key}}" ></input>
 </view>
 
 <view class="search-tip">
@@ -8,4 +8,11 @@
   <view class="tip-item"><text>标记过的人物名称</text></view>
   <view class="tip-item"><text>拍摄照片中的城市</text></view>
   <view class="tip-item"><text>照片中的事物</text></view>
+</view>
+
+<button bindtap="search" type="primary">查询</button>
+
+
+<view class="image-container" wx:for="{{imagelist}}" >
+<image id="{{item.imageid}}" class="image" src="{{item.path}}" bindtap="openimage"></image>
 </view>

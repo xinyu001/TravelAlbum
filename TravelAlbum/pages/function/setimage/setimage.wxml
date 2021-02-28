@@ -1,0 +1,22 @@
+<view class="con">
+<view class="table">
+   
+    <view class="tr bg-g" >
+      <view class="td">地点:</view>
+      <view class="td"><input placeholder="请输入地点" model:value="{{location}}"></input></view>
+    </view>      
+    <view class="tr" >
+      <view class="td">人物:</view>
+      <view class="td"><input placeholder="请输入人名" model:value="{{label}}"></input></view>
+    </view>  
+    <view class="section">
+</view>
+    <view class="tr bg-g">
+      <view class="td">ai识别:</view>
+      <view class="td">
+        <input placeholder="ai识别有误，手动输入" model:value="{{ai}}"></input>
+      </view>
+    </view> 
+</view>
+<button bindtap="updateimage" class="change-button" type="primary">确定</button>
+</view>

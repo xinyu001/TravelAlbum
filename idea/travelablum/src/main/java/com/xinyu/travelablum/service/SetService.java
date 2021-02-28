@@ -19,8 +19,8 @@ public class SetService {
         return  setmapper.deletealbum(albumid);
     }
 
-    public int updatealbum(String albumtype,String description,String albumid){
-        return setmapper.updatealbum(albumtype,description,albumid);
+    public int updatealbum(String albumtype,String description,String albumid,String albumname){
+        return setmapper.updatealbum(albumtype,description,albumid,albumname);
     }
     public int updateimage(String imageid,String label,String ai,String location){
         return setmapper.updateimage(imageid,label,ai,location);
