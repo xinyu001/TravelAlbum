@@ -11,6 +11,15 @@ public class Album {
     private String albumtype;
     private String coverimagepath;
     private String status;
+    private String description;
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
 
     public String getStatus() {
         return status;

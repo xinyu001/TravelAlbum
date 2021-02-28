@@ -1,84 +1,83 @@
-// pages/function/albumsetting/albumsetting.js
+var app = getApp()
+const url=app.globalData.url
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    albumtype: ['普通相册', '共享相册'],
+    typename:'普通相册',
+    // type:,
+    // description:
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+      this.setData({
+        albumid:options.albumid
+      })
+      this.getalbum()
+      
   },
 
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
-  },
-  f1:function(event){
-    wx.showModal({
-      title: '提示',
-      content: '这是一个模态弹窗',
-      success: function (res) {
-        if (res.confirm) {//这里是点击了确定以后
-          console.log('用户点击确定')
-        } else {//这里是点击了取消以后
-          console.log('用户点击取消')
-        }}
+  updatealbum:function(){
+    var that=this
+    console.log('用户点击确定'+that.data.albumname)
+    wx.request({
+      url: url+'Set/UpdateAlbum',
+      method:'GET',
+      data:{
+      albumid: that.data.albumid,
+      albumname:that.data.albumname,
+      description: that.data.description,
+      albumtype: that.data.type,
+      },
+      success(){
+        console.log('修改成功')
+      }
     })
+
+  },
+  getalbum:function () {
+    var that=this
+    wx.request({
+      url:  url+'Get/Album',
+      method:'GET',
+      data: {
+        albumid:that.data.albumid
+      },
+      success(res){
+        that.setData({
+          album:res.data,
+          albumname:res.data.albumname,
+          description:res.data.description,
+          type: res.data.albumtype
+        })
+        if(res.data.albumtype=='share'){
+          that.setData({typename:'共享相册'})   
+        }
+        // else that.setData({type:'普通相册'})
+        // console.log(res.data)
+      }
+    }) 
   },
   bindPickerChange:function(e){
-    console.log(e)
-    this.setData({
-      priceIndex: e.detail.value
+ //   console.log(e)
+    // this.setData({
+    //   index: e.detail.value
+    // })
+    if(e.detail.value=='0'){
+      this.setData({
+      type: 'normal',
+      typename:'普通相册'
     })
-  }
+    }
+    else this.setData({
+      type: 'share',
+      typename:'共享相册'
+    })
+  },
 })

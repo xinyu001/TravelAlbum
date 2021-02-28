@@ -38,7 +38,7 @@ App({
     userInfo: null,
     userid:"",
     user:{},
-//    url:"http://localhost:8080/"  
-    url:"http://47.119.118.195:8080/" //测试服务器地址
+   url:"http://localhost:8080/"  
+    // url:"http://47.119.118.195:8080/" //测试服务器地址
   }
 })
