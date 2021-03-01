@@ -29,6 +29,9 @@ Page({
       },
       success(){
         console.log('修改图片成功')
+        wx.navigateBack({
+          delta: 0,
+        })
       }
     })
 

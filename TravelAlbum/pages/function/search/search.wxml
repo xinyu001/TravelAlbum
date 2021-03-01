@@ -12,7 +12,6 @@
 
 <button bindtap="search" type="primary">查询</button>
 
-
 <view class="image-container" wx:for="{{imagelist}}" >
 <image id="{{item.imageid}}" class="image" src="{{item.path}}" bindtap="openimage"></image>
 </view>

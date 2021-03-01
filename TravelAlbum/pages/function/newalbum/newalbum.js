@@ -26,6 +26,9 @@ Page({
             },
             success(){
               console.log("新建成功")
+              wx.navigateBack({
+                delta: 0,
+              })
             }
           })
 

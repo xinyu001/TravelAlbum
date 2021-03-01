@@ -9,6 +9,9 @@ Page({
     this.getalbums()
 
   },
+  onShow(){
+    this.getalbums()
+  },
   getcode:function(){
     var that=this;
     wx.login({

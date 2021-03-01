@@ -37,6 +37,9 @@ Page({
       },
       success(){
         console.log('修改成功')
+wx.navigateBack({
+  delta: 0,
+})
       }
     })
 

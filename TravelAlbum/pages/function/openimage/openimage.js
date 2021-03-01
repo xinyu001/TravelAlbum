@@ -50,6 +50,9 @@ Page({
       },
       success(res){
         console.log(res.data)
+        wx.navigateBack({
+          delta: 0,
+        })
       }
     })
   },

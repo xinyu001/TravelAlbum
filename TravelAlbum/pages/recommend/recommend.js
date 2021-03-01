@@ -13,6 +13,7 @@ Page({
     // }, 1000) 
     
   },
+  onShow(){this.getsharealbum()},
   totest: function() {
     wx.navigateTo({
       url: '/pages/index/index'
