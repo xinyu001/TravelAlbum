@@ -2,7 +2,7 @@ var app = getApp()
 const url=app.globalData.url
 Page({
   data:{
-    key:'1'
+    key:''
   },
   search:function(){
     console.log("查询中")

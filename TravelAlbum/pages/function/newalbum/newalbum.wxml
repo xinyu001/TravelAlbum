@@ -9,10 +9,16 @@
 
       </view>
     </view> 
- <view class="tr" >
-      <view class="td">相册类型:</view>
-      <view class="td"><input placeholder="请输入寝室号" value="普通相册"></input></view>
-    </view>
+
+
+    <view class="tr" >
+      <view class="td">是否共享:</view>
+      <view class="td">
+        <picker bindchange="bindPickerChange" value="{{index}}" range="{{albumtype}}"><view class="picker">{{typename}}</view>
+        </picker>
+      </view>
+
+    </view>  
 
 </view>
 

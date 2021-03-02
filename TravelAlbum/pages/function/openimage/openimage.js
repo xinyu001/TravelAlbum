@@ -13,6 +13,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+       wx.cloud.init()
       this.setData({
         imageid:options.imageid,
         albumid:options.albumid,
@@ -57,26 +58,6 @@ Page({
       }
     })
   },
-  doloadimage:function(){
-    wx.getSetting({
-      success(res) {
-        if (!res.authSetting['scope.writePhotosAlbum']) {
-          wx.authorize({
-            scope: 'scope.writePhotosAlbum',
-            success () {
-              wx.saveImageToPhotosAlbum({
-                filePath: that.data.image.path,
-                success(){
-                  console.log("111")
-                }
-              })
-            }
-          })
-        }
-      }
-    })
-   
-  },
   setimage:function(){
     wx.navigateTo({
       url: '/pages/function/setimage/setimage?imageid='+this.data.imageid,
@@ -94,6 +75,42 @@ Page({
       success(){
         console.log('设置成功')
       }
+    })
+  },
+  downloadimage:function(){
+   var that=this
+    wx.getSetting({
+      success(res) {
+        if (!res.authSetting['scope.writePhotosAlbum']) {
+          wx.authorize({
+            scope: 'scope.writePhotosAlbum',
+          })
+        }
+      }
+    })
+    wx.cloud.downloadFile({
+      fileID:this.data.image.path,
+      success:res=>{
+        console.log("下载成功")
+        that.saveimage(res.tempFilePath)
+      }
+    })
+  },
+  saveimage(imgurl){
+    wx.saveImageToPhotosAlbum({
+      filePath: imgurl,
+    success(){
+        console.log("保存成功")
+        wx.showToast({
+          title: '下载成功',
+          icon: 'success',
+          duration: 1000//持续的时间
+        })
+      },
+      fail(){
+        console.log("保存失败")
+      }
+
     })
   }
 })

@@ -7,9 +7,11 @@
   <button bindtap="deleteimage" type="primary" wx:if="{{sharetag=='false'}}">
     删除
   </button>
-  <button bindtap="doloadimage" type="primary" >
+  <button bindtap="downloadimage" type="primary" >
     下载
   </button>
+
+
   <button bindtap="setimage" type="primary" wx:if="{{sharetag=='false'}}">
     地点标签设置
   </button>

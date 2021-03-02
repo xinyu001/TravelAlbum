@@ -2,7 +2,9 @@ var app = getApp()
 const url=app.globalData.url
 Page({
   data:{
-    value1:''
+    value1:'',
+    albumtype: ['普通相册', '共享相册'],
+    typename:'普通相册',
   },
   getvalue(e){
     console.log(e.detail.value)
@@ -37,6 +39,22 @@ Page({
           console.log('用户点击取消')
         }}
     })
-  }
+  },
+  bindPickerChange:function(e){
+    //   console.log(e)
+       // this.setData({
+       //   index: e.detail.value
+       // })
+       if(e.detail.value=='0'){
+         this.setData({
+         type: 'normal',
+         typename:'普通相册'
+       })
+       }
+       else this.setData({
+         type: 'share',
+         typename:'共享相册'
+       })
+     },
   
 })
