@@ -6,7 +6,8 @@ Page({
   },
   onLoad: function (options) {
     this.setData({
-      albumid:options.albumid
+      albumid:options.albumid,
+      sharetag:options.sharetag
     })
     this.getalbum()
     var that=this
@@ -114,7 +115,7 @@ Page({
   openimage:function(item){
     console.log("imageid:"+item.target.id)
     wx.navigateTo({
-      url: '/pages/function/openimage/openimage?imageid='+item.target.id+'&albumid='+this.data.albumid
+      url: '/pages/function/openimage/openimage?sharetag='+this.data.sharetag+'&imageid='+item.target.id+'&albumid='+this.data.albumid
     })
   },
   deletealbum:function(){

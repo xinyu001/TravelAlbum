@@ -15,7 +15,8 @@ Page({
   onLoad: function (options) {
       this.setData({
         imageid:options.imageid,
-        albumid:options.albumid
+        albumid:options.albumid,
+        sharetag:options.sharetag
       })
       console.log(this.data.imageid)
       this.getimage()

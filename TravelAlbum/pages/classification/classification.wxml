@@ -2,7 +2,7 @@
 <view class="people-container"><text>人物:</text>
 <scroll-view class="scroll-people-container" scroll-x="true">
   <view class="scroll-people-item" wx:for="{{peoplelist}}">
-    <image class="scroll-people-image" src="{{item.firstimagesrc}}" bindtap="openpeople"></image>
+    <image class="scroll-people-image" src="{{item.firstimagesrc}}" bindtap="openpeople" mode="aspectFill"></image>
   </view>
 
 </scroll-view>
@@ -11,7 +11,7 @@
 <view class="location-container"><text>地点:</text>
 <scroll-view class="scroll-location-container" scroll-x="true">
     <view class="scroll-location-item" wx:for="{{locationlist}}">
-      <image class="scroll-location-image" src="{{item.firstimagesrc}}"></image>
+      <image mode="aspectFill" class="scroll-location-image" src="{{item.firstimagesrc}}"></image>
       <text class="scroll-location-text">{{item.locationname}}</text>
     </view>
 </scroll-view>

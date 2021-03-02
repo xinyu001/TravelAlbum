@@ -19,7 +19,7 @@
 <scroll-view  scroll-x="true" class="scroll-container">
 
   <view  wx:for="{{albumlist}}"  class="scroll-container-item" >
-    <image  id="{{item.albumid}}" class="scroll-view-item-image" src="{{item.coverimagepath}}" bindtap="openalbum"></image>
+    <image  id="{{item.albumid}}" class="scroll-view-item-image" src="{{item.coverimagepath}}" bindtap="openalbum" mode="aspectFill"></image>
     <text class="scroll-view-item-text">{{item.albumname}}</text>
   </view>
 

@@ -127,7 +127,7 @@ var imagetype=code
   openalbum:function(item){
     console.log(item.target.id)
     wx.navigateTo({
-      url: '/pages/function/openalbum/openalbum?albumid='+item.target.id
+      url: '/pages/function/openalbum/openalbum?sharetag=true&albumid='+item.target.id
     })
   },
 })  

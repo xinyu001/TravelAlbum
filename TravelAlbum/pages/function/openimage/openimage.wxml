@@ -4,16 +4,16 @@
 
 
 <view>
-  <button bindtap="deleteimage" type="primary">
+  <button bindtap="deleteimage" type="primary" wx:if="{{sharetag=='false'}}">
     删除
   </button>
-  <button bindtap="doloadimage" type="primary">
+  <button bindtap="doloadimage" type="primary" >
     下载
   </button>
-  <button bindtap="setimage" type="primary">
+  <button bindtap="setimage" type="primary" wx:if="{{sharetag=='false'}}">
     地点标签设置
   </button>
-  <button bindtap="setcoverimage" type="primary">
+  <button bindtap="setcoverimage" type="primary" wx:if="{{sharetag=='false'}}">
     设置为封面
   </button>
 </view>
