@@ -22,6 +22,10 @@
 }
 .album-container{
   height:38%;
+  margin-top:30px;
+}
+.text{
+  margin:5px;
 }
 .album{
   height:260rpx;
@@ -31,6 +35,7 @@
 .scroll-container{
   white-space: nowrap; 
   display: flex;
+  margin-top:10px;
 }
 
 .scroll-container-item{
@@ -51,8 +56,14 @@
   display: block;
   text-align: center;
 }
+.swiper-container{
+
+  width: 100%;
+}
 .swiper{
   height: 200px;
   width: 100%;
-  background: pink;
+}
+.swiperimage{
+  width: 100%;
 }

@@ -42,5 +42,7 @@ public class GetService {
         return getMapper.getimage(imageid);
     }
 
-    public List<Image> search(String label,String ai,String location,String userid) { return getMapper.search(label,ai,location,userid); }
+    public List<Image> search(String label,String ai,String location,String userid) {
+        return getMapper.search(label,ai,location,userid);
+    }
 }

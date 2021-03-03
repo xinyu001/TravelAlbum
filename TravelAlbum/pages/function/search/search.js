@@ -2,7 +2,8 @@ var app = getApp()
 const url=app.globalData.url
 Page({
   data:{
-    key:''
+    key:'',
+    sharetag:'true'
   },
   search:function(){
     console.log("查询中")
@@ -23,5 +24,11 @@ Page({
         console.log(res.data)
       }
     })
-  }
+  },
+  openimage:function(item){
+    console.log("imageid:"+item.target.id)
+    wx.navigateTo({
+      url: '/pages/function/openimage/openimage?sharetag='+this.data.sharetag+'&imageid='+item.target.id+'&albumid='+this.data.albumid
+    })
+  },
 })

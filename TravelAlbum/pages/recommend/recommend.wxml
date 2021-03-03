@@ -2,9 +2,16 @@
   <view class="search">
     <image  class="search-image" src="/images/icons/搜索.png" bindtap="tosearch"></image>
   </view>
-<view class="swiper">
-  轮播图
-  <banner imageList="{{BannerList}}" ></banner>
+<view class="swiper-container">
+  <swiper indicator-dots="true" class="swiper" >
+        <block wx:for="{{ImageList}}" wx:key="*this">
+          <swiper-item>
+            <view class="swiper-item">
+              <image mode="aspectFill" src="{{item.imagePath}}" class="swiperimage"></image>
+            </view>
+          </swiper-item>
+        </block>
+      </swiper>
 </view>
 <!-- <button bindtap="totest" type="primary">
 测试
@@ -18,7 +25,7 @@
 </button> -->
 </view>
 <view class="album-container" >
-<text>共享相册:</text>
+<text class="text">共享相册:</text>
 <scroll-view  scroll-x="true" class="scroll-container">
 
   <view  wx:for="{{sharealbumlist}}"  class="scroll-container-item" >

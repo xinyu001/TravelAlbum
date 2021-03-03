@@ -77,7 +77,7 @@ public class GetController {
                               @RequestParam(value = "ai") String ai,
                               @RequestParam(value = "location") String location,
                               @RequestParam(value = "userid") String userid) throws Exception {
-        System.out.println("搜索中");
+        System.out.println("搜索中"+label+ai+location +userid);
         return getService.search(label,ai,location,userid);
     }
 

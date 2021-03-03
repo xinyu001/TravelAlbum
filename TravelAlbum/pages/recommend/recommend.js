@@ -4,14 +4,17 @@ const path="cloud://test1-2g8apckr01622f46.7465-test1-2g8apckr01622f46-130498361
 Page({  
   data:{
     "albumlist":[],
-    "BannerList":[
+    "ImageList":[
       {
-        "imagePath":path + "/images/photos/people/1.jpeg"
+        "imagePath":path + "/images/photos/location/shanghai.jpeg"
+      }
+      ,
+      {
+        "imagePath":path + "/images/photos/location/nanjing.jpeg"
       },
       {
-        "imagePath":path + "/images/photos/people/1.jpeg"
+        "imagePath":path + "/images/photos/location/beijing.jpeg"
       }
-       
     ]
   },
   onLoad(){

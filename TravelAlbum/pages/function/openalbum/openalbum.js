@@ -2,7 +2,15 @@ var app = getApp()
 const url=app.globalData.url
 Page({
   data:{
-  "imagelist":[]
+  // "uploadimagelist":[
+  // // {  
+  // //   "imagename":"",
+  // //   "type":"",
+  // //   "ai":"",
+  // //   "url":""
+  // // }
+  // ],
+
   },
   onLoad: function (options) {
     this.setData({
@@ -225,5 +233,91 @@ Page({
       })
     
   },
+  newimages:function(){
+    var that = this;
+    wx.chooseImage({
+      sizeType: ['original', 'compressed'], 
+      sourceType: ['album', 'camera'], 
+      success: function (res){
+        that.setData({
+          ImageTemPath: res.tempFilePaths
+        }) 
+        wx.cloud.init()
+        for(let i = 0 ; i <that.data.ImageTemPath.length ; i++){ 
+        wx.getImageInfo({
+          src: that.data.ImageTemPath[i],
+          success(res){
+            that.setData({   
+            ['type['+ i +']']:res.type,
+            ['imagename['+i+']']:new Date().getTime() +"-"+ Math.floor(Math.random() * 1000)+'.'+res.type
+          })
+          wx.cloud.uploadFile({
+            cloudPath:  "images/photos/"+app.globalData.user.userid+'/'+that.data.imagename[i],  
+            filePath: that.data.ImageTemPath[i], // 小程序临时文件路径
+            success: res => {
+              console.log(res.fileID)
+              that.setData({
+                ['fileID['+i+']']:res.fileID,
+              })
+              wx.getFileSystemManager().readFile({
+                filePath: that.data.ImageTemPath[i],
+                encoding:'base64',
+                success: res=>{
+                  that.setData({
+                    ['base64['+i+']']:res.data,
+                  })
+
+                  const detecturl="https://aip.baidubce.com/rest/2.0/image-classify/v2/advanced_general?access_token="+that.data.baidutoken;
+                    wx.request({
+                      url: detecturl,
+                      data:{
+                        image:that.data.base64[i]
+                      },
+                      method:"POST",
+                      dataType:'json',
+                      header:{
+                        'content-type': 'application/x-www-form-urlencoded' 
+                      },
+                      success(res){
+                        console.log('识别图像成功')
+                        console.log(res.data.result[0].name)
+                        that.setData({
+                          ['resuledata['+i+']']:res.data,
+                          ['ai['+i+']']:res.data.result[0].keyword
+                        })
+                        wx.request({
+                          url:  url+'Upload/Image',
+                          method:'GET',
+                          data:{
+                            albumid:that.data.albumid,
+                            imagename:that.data.imagename[i],
+                            path:that.data.fileID[i],
+                            ai:that.data.ai[i]
+                          },
+                          success(){
+                            console.log("第"+i+"张上传成功")
+                            that.onShow()
+                          }
+                        })
+                      },
+                  
+                    })
+
+
+          //        that.scanImageInfo()
+                }
+              })
+  
+            }
+          })
+  
+          //底部括号
+          }
+        })
+      }
+      }
+    })
    
+},
+
 })

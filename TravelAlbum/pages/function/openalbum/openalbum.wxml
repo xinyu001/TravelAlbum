@@ -4,9 +4,12 @@
 </view>
 
 <view class="button-container">
-<button class="button" bindtap="newimage" type="primary" size="mini">
+<button class="button" bindtap="newimages" type="primary" size="mini">
 上传图片
 </button>
+<!-- <button class="button" bindtap="newimages" type="primary" size="mini">
+test
+</button> -->
 <button class="button"  bindtap="deletealbum" size="mini" type="primary" wx:if="{{sharetag=='false'}}">
   删除相册
 </button>
