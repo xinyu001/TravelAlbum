@@ -1,8 +1,18 @@
 var app = getApp()
 const url=app.globalData.url
+const path="cloud://test1-2g8apckr01622f46.7465-test1-2g8apckr01622f46-1304983618"
 Page({  
   data:{
-    "albumlist":[]
+    "albumlist":[],
+    "BannerList":[
+      {
+        "imagePath":path + "/images/photos/people/1.jpeg"
+      },
+      {
+        "imagePath":path + "/images/photos/people/1.jpeg"
+      }
+       
+    ]
   },
   onLoad(){
     this.getsharealbum()

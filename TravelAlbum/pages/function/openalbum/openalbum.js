@@ -68,19 +68,27 @@ Page({
       success: function (res) {
      //   console.log("返回的路径",res)
         that.setData({ImageTemPath: res.tempFilePaths[0],})
-        var code = that.data.ImageTemPath.match(/tmp\/(.*)/)[1];
-        var imagename=code
+       // var code = that.data.ImageTemPath.match(/tmp\/(.*)/)[1];
+      //  var imagename=code
+      wx.getImageInfo({
+        src: that.data.ImageTemPath,
+        success(res){
+          that.setData({
+            type:res.type,
+            imagename:new Date().getTime() +"-"+ Math.floor(Math.random() * 1000)+'.'+res.type,
+          })
+        }
+      })
         wx.cloud.init()
         wx.cloud.uploadFile({
-        // 上传至云端的路径
-          cloudPath:  "images/photos/"+app.globalData.user.userid+'/' + new Date().getTime() +"-"+ Math.floor(Math.random() * 1000)+imagename,
+          // cloudPath:  "images/photos/"+app.globalData.user.userid+'/' + new Date().getTime() +"-"+ Math.floor(Math.random() * 1000)+'.'+that.data.type,
+          cloudPath:  "images/photos/"+app.globalData.user.userid+'/'+that.data.imagename,  
           filePath: that.data.ImageTemPath, // 小程序临时文件路径
           success: res => {
             // 返回文件 ID
             console.log(res.fileID)
             that.setData({
               fileID:res.fileID,
-              ImageName:imagename
             })
             wx.getFileSystemManager().readFile({
               filePath: that.data.ImageTemPath,
@@ -198,7 +206,7 @@ Page({
             method:'GET',
             data:{
               albumid:that.data.albumid,
-              imagename:that.data.ImageName,
+              imagename:that.data.imagename,
               path:that.data.fileID,
               ai:that.data.ai
             },
@@ -216,6 +224,6 @@ Page({
     
       })
     
-    },
+  },
    
 })

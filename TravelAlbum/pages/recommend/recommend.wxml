@@ -2,7 +2,10 @@
   <view class="search">
     <image  class="search-image" src="/images/icons/搜索.png" bindtap="tosearch"></image>
   </view>
-
+<view class="swiper">
+  轮播图
+  <banner imageList="{{BannerList}}" ></banner>
+</view>
 <!-- <button bindtap="totest" type="primary">
 测试
 </button>

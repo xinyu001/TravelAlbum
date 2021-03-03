@@ -2,8 +2,8 @@
   height: 100vmax;
 }
 
-.title-container{
-  height: 20%;
+.button-container{
+  height: 10%;
   width: 100%;
   display: flex;
   align-items: center;
@@ -11,6 +11,11 @@
 }
 .title{
   text-justify: auto;
+}
+.albumname-container{
+  align-items: center;
+  justify-content: center;
+  display: flex;
 }
 
 
@@ -27,5 +32,13 @@
 }
 
 .button{
-  display: inline-block;
+  margin: 20rpx;
+}
+.description{
+  height: 200rpx;
+  display:flex;                    
+  justify-content: center;  
+  text-align:center; 
+  align-items: center;
+
 }

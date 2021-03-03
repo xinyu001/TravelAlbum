@@ -1,17 +1,20 @@
 <view class="main-container">
-<view class="title-container">
+<view class="albumname-container">
 <text class="title" bindtap="f1">{{album.albumname}}</text>
-<button class="button" bindtap="newimage" type="primary">
+</view>
+
+<view class="button-container">
+<button class="button" bindtap="newimage" type="primary" size="mini">
 上传图片
 </button>
-<button class="button"  bindtap="deletealbum" type="primary" wx:if="{{sharetag=='false'}}">
+<button class="button"  bindtap="deletealbum" size="mini" type="primary" wx:if="{{sharetag=='false'}}">
   删除相册
 </button>
-<button class="button"  bindtap="albumsetting" type="primary" wx:if="{{sharetag=='false'}}">
+<button class="button"  bindtap="albumsetting" size="mini" type="primary" wx:if="{{sharetag=='false'}}">
   相册设置
 </button>
 </view>
-<view>
+<view class="description">
   <label>{{album.description}}</label>
 </view>
 <view class="image-container" wx:for="{{imagelist}}" >
