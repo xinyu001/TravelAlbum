@@ -4,7 +4,7 @@ import java.util.Date;
 
 public class Image {
     private Integer imageid;
-    private Integer ablumid;
+    private Integer albumid;
     private String imagename;
     private Date uploadtime;
     private String path;
@@ -44,12 +44,12 @@ public class Image {
         this.imageid = imageid;
     }
 
-    public Integer getAblumid() {
-        return ablumid;
+    public Integer getAlbumid() {
+        return albumid;
     }
 
-    public void setAblumid(Integer ablumid) {
-        this.ablumid = ablumid;
+    public void setAlbumid(Integer ablumid) {
+        this.albumid = ablumid;
     }
 
     public String getImagename() {

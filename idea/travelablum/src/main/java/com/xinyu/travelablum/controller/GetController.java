@@ -81,7 +81,31 @@ public class GetController {
         return getService.search(label,ai,location,userid);
     }
 
+//    @GetMapping(value = "AIList")
+//    public List<AI> GetAiList(@RequestParam(value = "userid") String userid)throws Exception{
+//        System.out.println("查询ai中");
+//        return getService.getailist(userid);
+//
+//    }
 
+    @GetMapping(value = "/ImagesByLocation")
+    public List<Image> GetImagesByLocation(@RequestParam(value = "userid") String userid,
+                                           @RequestParam(value = "location") String location)throws Exception{
+        System.out.println("查询该地点所有的图片中");
+        return getService.getimagesbylocation(location,userid);
+    }
+//
+//    @GetMapping(value = "/Locations")
+//    public List<String> GetLocations(@RequestParam(value = "userid") String userid)throws Exception{
+//        System.out.println("查询所有地点中");
+//        return getService.getlocations(userid);
+//    }
+
+    @GetMapping(value = "/Locations")
+    public List<Image> GetLocations(@RequestParam(value = "userid") String userid)throws Exception{
+        System.out.println("查询所有地点中");
+        return getService.getlocations(userid);
+    }
 
 
 
