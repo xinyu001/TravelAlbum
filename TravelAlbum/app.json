@@ -10,7 +10,9 @@
     "pages/function/newalbum/newalbum",
     "pages/function/openimage/openimage",
     "pages/function/albumsetting/albumsetting",
-    "pages/function/setimage/setimage"
+    "pages/function/setimage/setimage",
+    "pages/function/openlocation/openlocation",
+    "pages/function/openlocationimage/openlocationimage"
   ],
   "window":{
     "backgroundTextStyle":"light",

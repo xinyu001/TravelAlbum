@@ -30,28 +30,7 @@ Page({
         "firstimagesrc":path+"/images/photos/people/5.jpeg"
       },
     ],
-    "locationlist":[
-      {
-        "locationid":"1",
-        "locationname":"台州",
-        "firstimagesrc":path+"/images/photos/location/taizhou.jpeg"
-      },
-      {
-        "locationid":"2",
-        "locationname":"南京",
-        "firstimagesrc":path+"/images/photos/location/nanjing.jpeg"
-      },
-      {
-        "locationid":"3",
-        "locationname":"上海",
-        "firstimagesrc":path+"/images/photos/location/shanghai.jpeg"
-      },
-      {
-        "locationid":"4",
-        "locationname":"北京",
-        "firstimagesrc":path+"/images/photos/location/beijing.jpeg"
-      },
-    ],
+    "locationlist":[],
     "eventlist":[
       {
         "eventid":"1",
@@ -79,5 +58,33 @@ Page({
         "firstimagesrc":path+"/images/photos/5.jpeg"
       },
     ]
+  },
+  onLoad(){
+    this.getlocations()
+  },
+  onShow(){
+    this.getlocations()
+  },
+  getlocations:function () {
+    var that=this
+    wx.request({
+      url: url+'Get/Locations',
+      method:'GET',
+      data: {
+        userid:app.globalData.user.userid
+      },
+      success(res){
+        that.setData({
+          locationlist:res.data
+        })
+        console.log(res.data)
+      }
+    }) 
+  },
+  openlocation:function(item){
+    console.log(item.target.id)
+    wx.navigateTo({
+      url: '/pages/function/openlocation/openlocation?location='+item.target.id
+    })
   }
 })

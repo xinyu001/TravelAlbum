@@ -5,7 +5,7 @@ spring:
 #    password: admin
 #    driver-class-name: com.mysql.cj.jdbc.Driver
 
-  #本地数据库连接
+  #本地数据库连接#云服务器数据库
   datasource:
    url: jdbc:mysql://localhost:3306/travelalbum?serverTimezone=GMT%2B8
    username: root
@@ -19,7 +19,7 @@ spring:
 #    username: root
 #    password: 123456
 #    driver-class-name: com.mysql.cj.jdbc.Driver
-#
+
 #  thymeleaf:
 #    prefix: classpath:/templates/
 
@@ -29,5 +29,5 @@ mybatis:
   type-aliases-package: cn.wbnull.springbootdemo.model  #对应实体类路径
 
 server:
-  port: 8080
+  port: 80
 

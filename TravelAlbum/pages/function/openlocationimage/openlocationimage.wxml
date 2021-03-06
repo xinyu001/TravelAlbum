@@ -1,0 +1,33 @@
+<!--pages/function/openimage/openimage.wxml-->
+<view class="image-view"><image class="image" src="{{image.path}}">
+</image></view>
+<view class="table">
+   
+   <view class="tr bg-g" >
+     <view class="td">地点:</view>
+     <view class="td">{{image.location}}</view>
+   </view>      
+   <view class="tr" >
+     <view class="td">人物:</view>
+     <view class="td">{{image.label}}</view>
+   </view>  
+   <view class="section">
+</view>
+   <view class="tr bg-g">
+     <view class="td">ai识别:</view>
+     <view class="td">{{image.ai}}</view>
+   </view> 
+</view>
+
+<view class="button-container">
+  <button class="button" bindtap="deleteimage" size="mini" type="primary" >
+    删除
+  </button>
+  <button class="button" bindtap="downloadimage" size="mini" type="primary" >
+    下载
+  </button>
+  <button class="button" bindtap="setimage" type="primary" size="mini">
+    地点标签设置
+  </button>
+
+</view>

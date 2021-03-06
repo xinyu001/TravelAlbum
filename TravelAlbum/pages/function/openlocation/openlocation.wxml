@@ -1,0 +1,10 @@
+<view class="main-container">
+<view class="albumname-container">
+<text class="title" bindtap="f1">{{album.albumname}}</text>
+</view>
+
+
+<view class="image-container" wx:for="{{imagelist}}" >
+<image id="{{item.imageid}}" src="{{item.path}}" bindtap="openimage" mode="aspectFill"></image>
+</view>
+</view>

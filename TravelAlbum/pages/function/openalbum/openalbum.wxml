@@ -20,7 +20,10 @@ test
 <view class="description">
   <label>{{album.description}}</label>
 </view>
-<view class="image-container" wx:for="{{imagelist}}" >
+<!-- <view class="image-container" wx:for="{{imagelist}}" >
 <image id="{{item.imageid}}" class="image" src="{{item.path}}" bindtap="openimage" mode="aspectFill"></image>
+</view> -->
+<view class="image-container" wx:for="{{imagelist}}" >
+<image id="{{item.imageid}}" src="{{item.path}}" bindtap="openimage" mode="aspectFill"></image>
 </view>
 </view>
