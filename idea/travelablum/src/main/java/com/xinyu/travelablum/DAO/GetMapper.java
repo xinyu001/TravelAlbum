@@ -29,22 +29,22 @@ public interface GetMapper {
         @Select("select * from image where imageid=#{imageid}")
         Image getimage(@Param("imageid") String imageid);
 
-        @Select("select * from image where label=#{label} and albumid in(SELECT albumid from user where userid=#{userid} and status='normal')and status='normal' UNION " +
-                "select * from image where ai=#{ai} and albumid in(SELECT albumid from user where userid=#{userid} and status='normal')and status='normal' UNION " +
-                "select * from image where location=#{location} and albumid in(SELECT albumid from user where userid=#{userid} and status='normal')and status='normal'")
+        @Select("select * from image where label=#{label} and albumid in(SELECT albumid from album where userid=#{userid} and status='normal')and status='normal' UNION " +
+                "select * from image where ai=#{ai} and albumid in(SELECT albumid from album where userid=#{userid} and status='normal')and status='normal' UNION " +
+                "select * from image where location=#{location} and albumid in(SELECT albumid from album where userid=#{userid} and status='normal')and status='normal'")
         List<Image> search(@Param("label") String label,@Param("ai") String ai,@Param("location") String location,@Param("userid") String userid);
 
         @Insert("insert into user(openid) value(#{openid})")
         int newuser(@Param(value ="openid") String openid);
 
-        @Select("select DISTINCT location from image where location<>'' and albumid in (SELECT albumid from user where userid=#{userid} and status='normal')and status='normal'")
-        List<String>  getlocations(@Param(value = "userid") String userid);
+        @Select("select DISTINCT location from image where location<>'' and albumid in (SELECT albumid from album where userid=#{userid} and status='normal')and status='normal'")
+        List<String> getlocations(@Param(value = "userid") String userid);
 
-        @Select("select * from image where location=#{location} and albumid in(SELECT albumid from user where userid=#{userid} and status='normal')and status='normal' limit 1")
+        @Select("select * from image where location=#{location} and albumid in(SELECT albumid from album where userid=#{userid} and status='normal')and status='normal' limit 1")
         Image getimagebylocation(@Param(value = "location") String location ,@Param(value = "userid") String userid);
 
 
-        @Select("select * from image where location=#{location} and albumid in(SELECT albumid from user where userid=#{userid} and status='normal')and status='normal'")
+        @Select("select * from image where location=#{location} and albumid in(SELECT albumid from album where userid=#{userid} and status='normal')and status='normal'")
         List<Image> getimagesbylocation(@Param(value = "location") String location ,@Param(value = "userid") String userid);
 
 

@@ -49,14 +49,10 @@ public class GetService {
     }
 
     public List<Image> getlocations(String userid){
-
-
         List<String> list=getMapper.getlocations(userid);
+        System.out.println(list);
         List<Image> imagelist=new ArrayList<Image>();
-     //   System.out.println(list);
-//        for (int i=0;i<list.length;i++){
-//
-//        }
+
         for(String attribute : list) {
     //        System.out.println(attribute);
             imagelist.add(getMapper.getimagebylocation(attribute,userid));
@@ -64,7 +60,7 @@ public class GetService {
         }
 
             return imagelist;
-//        return getMapper.getimagesbylocation("广州",userid);
+
 
 
     }
