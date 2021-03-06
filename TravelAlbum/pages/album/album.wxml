@@ -13,8 +13,8 @@
 </view>
 </view>
 
-
-<view class="album-container" >
+1
+<view class="album-container main-container" >
 <text>云端相册:</text>
 <scroll-view  scroll-x="true" class="scroll-container">
 
