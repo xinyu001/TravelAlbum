@@ -30,6 +30,24 @@ Page({
         "firstimagesrc":path+"/images/photos/people/5.jpeg"
       },
     ],
+    "ailist":[
+      {
+        "ai":"天空",
+        "path":path+"/images/photos/ai/天空.jpeg",
+      },
+      {
+        "ai":"风景",
+        "path":path+"/images/photos/ai/风景.jpeg",
+      },
+      {
+        "ai":"合照",
+        "path":path+"/images/photos/ai/合照.jpeg",
+      },
+      {
+        "ai":"建筑",
+        "path":path+"/images/photos/ai/建筑.jpeg",
+      },
+    ],
     "locationlist":[],
     "eventlist":[
       {

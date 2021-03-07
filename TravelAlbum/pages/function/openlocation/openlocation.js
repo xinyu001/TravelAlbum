@@ -25,6 +25,9 @@ Page({
         that.setData({
           imagelist:res.data
         })
+        wx.setNavigationBarTitle({
+          title: that.data.location,
+        })
         console.log(res.data)
       }
     }) 

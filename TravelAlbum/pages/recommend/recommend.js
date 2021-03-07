@@ -6,12 +6,12 @@ Page({
     "albumlist":[],
     "ImageList":[
       {
+        "imagePath":path + "/images/photos/location/nanjing.jpeg"
+      },
+      {
         "imagePath":path + "/images/photos/location/shanghai.jpeg"
       }
       ,
-      {
-        "imagePath":path + "/images/photos/location/nanjing.jpeg"
-      },
       {
         "imagePath":path + "/images/photos/location/beijing.jpeg"
       }

@@ -17,21 +17,6 @@
   justify-content: center;
   display: flex;
 }
-
-
-.imagecontainer{
-  width: 100%;
-  display: flex;
-  white-space: nowrap;
-}
-.image{
-  width: 150px;
-  height: 150px;
-  display: inline-block;
-  margin: 10px;
-  
-}
-
 .button{
   margin: 20rpx;
 }
@@ -41,5 +26,24 @@
   justify-content: center;  
   text-align:center; 
   align-items: center;
+}
+
+.showed-item-container{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+.showed-item{
+  height: 300rpx;
+  width: 33.3333%;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.item-img{
+  width: 100%;
+  height: 100%;
 
 }

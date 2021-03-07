@@ -24,7 +24,7 @@
   border-radius:50%;
 }
 .location-container{
-  height: 40%;
+  height: 35%;
   width: 100%;
 }
 .scroll-location-container{
@@ -71,4 +71,47 @@
 .scroll-event-text{
   display: block;
   text-align: center;
+}
+
+
+
+.showed-item-container{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 90%;
+  flex-wrap: wrap;
+  margin-top: 20px;
+  margin-left: 10px;
+}
+
+.showed-item{
+  height: 360rpx;
+  width: 320rpx;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: white;
+  margin-bottom: 30rpx;
+  margin-left: 10rpx;
+  
+}
+.test{
+  box-shadow: 0 2px 4px rgba(0, 0, 0, .12), 0 0 6px rgba(0, 0, 0, .04);
+}
+.item-img{
+  width: 100%;
+  height: 80%;
+  border-radius: 5px;
+}
+.text-container{
+  height: 20%;
+  display: flex;
+  justify-content:center;
+  align-items: center;
+}
+.text{
+display: inline;
 }

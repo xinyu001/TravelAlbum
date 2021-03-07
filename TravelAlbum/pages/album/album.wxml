@@ -2,28 +2,36 @@
 <view class="newalbum-container">
 <text>新建相册:</text>
 <view class="newalbum">
-<view class="newalbum-item" bindtap="newalbum">
+<view class="newalbum-item left" bindtap="newalbum">
   <image  class="newalbum-image" src="/images/icons/album.png"></image>
   <text class="newalbum-text">普通相册</text>
 </view>
-<view class="newalbum-item" bindtap="f2" >
+<view class="newalbum-item right" bindtap="f2" >
   <image  class="newalbum-image" src="/images/icons/travelablum.png"></image>
-  <text class="newalbum-text">旅行相册</text>
+  <text class="newalbum-text">共享相册</text>
 </view>
 </view>
 </view>
 
-1
+
 <view class="album-container main-container" >
 <text>云端相册:</text>
-<scroll-view  scroll-x="true" class="scroll-container">
+<!-- <scroll-view  scroll-x="true" class="scroll-container">
 
   <view  wx:for="{{albumlist}}"  class="scroll-container-item" >
     <image  id="{{item.albumid}}" class="scroll-view-item-image" src="{{item.coverimagepath}}" bindtap="openalbum" mode="aspectFill"></image>
     <text class="scroll-view-item-text">{{item.albumname}}</text>
   </view>
 
-</scroll-view>
+</scroll-view> -->
+<view class="showed-item-container">
+  <view wx:for="{{albumlist}}" class="showed-item">
+          <image id="{{item.albumid}}" src="{{item.coverimagepath}}" class="item-img" bindtap="openalbum" mode="aspectFill"></image>
+          <view class="text-container">
+          <text class="item-text">{{item.albumname}}</text>           
+          </view>
+  </view>
+</view>
 </view>
 
 </view>

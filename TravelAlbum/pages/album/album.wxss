@@ -1,21 +1,34 @@
 .main-container{
-  height: 100vh;
+  height: 100%;
 }
+
 .newalbum-container{
   height:30%;
-  width: 100%;
+  width: 90%;
 }
 .newalbum{
   width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  flex-wrap: wrap;
+  margin-top: 20px;
+  margin-left: 10px;
 }
 .newalbum-item{
   display: inline-block;
   height: 80px;
   width: 80px;
   border-radius:5px;
-  margin: 10px;
   background-size: cover;
   box-shadow: 0 2px 4px rgba(0, 0, 0, .12), 0 0 6px rgba(0, 0, 0, .04)
+}
+.left{
+  margin-left:70px;
+}
+.right{
+  margin-right:70px;
 }
 .newalbum-image{
   position: relative;
@@ -61,4 +74,47 @@
 .scroll-view-item-text{
   display: block;
   text-align: center;
+}
+
+
+
+.showed-item-container{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 90%;
+  flex-wrap: wrap;
+  margin-top: 20px;
+  margin-left: 10px;
+}
+
+.showed-item{
+  height: 360rpx;
+  width: 320rpx;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: white;
+  margin-bottom: 30rpx;
+  margin-left: 10rpx;
+  
+}
+.test{
+  box-shadow: 0 2px 4px rgba(0, 0, 0, .12), 0 0 6px rgba(0, 0, 0, .04);
+}
+.item-img{
+  width: 100%;
+  height: 80%;
+  border-radius: 5px;
+}
+.text-container{
+  height: 20%;
+  display: flex;
+  justify-content:center;
+  align-items: center;
+}
+.text{
+display: inline;
 }

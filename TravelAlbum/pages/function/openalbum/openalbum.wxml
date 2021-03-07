@@ -1,6 +1,6 @@
 <view class="main-container">
 <view class="albumname-container">
-<text class="title" bindtap="f1">{{album.albumname}}</text>
+<!-- <text class="title" bindtap="f1">{{album.albumname}}</text> -->
 </view>
 
 <view class="button-container">
@@ -23,7 +23,12 @@ test
 <!-- <view class="image-container" wx:for="{{imagelist}}" >
 <image id="{{item.imageid}}" class="image" src="{{item.path}}" bindtap="openimage" mode="aspectFill"></image>
 </view> -->
-<view class="image-container" wx:for="{{imagelist}}" >
-<image id="{{item.imageid}}" src="{{item.path}}" bindtap="openimage" mode="aspectFill"></image>
+  <view class="showed-item-container">
+   <view class="showed-item" wx:for="{{imagelist}}" >
+     <image id="{{item.imageid}}" class="item-img" src="{{item.path}}" bindtap="openimage" mode="aspectFill"></image>
+   </view>
+  </view>
+
+
 </view>
-</view>
+

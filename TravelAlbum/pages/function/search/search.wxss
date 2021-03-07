@@ -17,11 +17,10 @@ border-radius:5px;
 box-shadow: 0 2px 4px rgba(0, 0, 0, .12), 0 0 6px rgba(0, 0, 0, .04);
 }
 .search-tip{
-  height: 80vm;
+  height:100px;
 
-  align-items: center;
-  justify-content: center;
+
 }
 .tip-item{
-  display: block;
+  text-align:center;
 }

@@ -8,7 +8,10 @@
     </block>
   </view>
   <view class="usermotto">
-    <text class="user-motto">{{motto}}</text>
+    <!-- <text class="user-motto">{{motto}}</text> -->
+    <button>修改个人信息</button>
 
+    <button>联系技术人员</button>
   </view>
+
 </view>

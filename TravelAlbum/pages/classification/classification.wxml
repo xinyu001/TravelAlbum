@@ -8,13 +8,35 @@
 </scroll-view>
 </view>
 
-<view class="location-container"><text>地点:</text>
+
+<view class="location-container"><text>AI:</text>
 <scroll-view class="scroll-location-container" scroll-x="true">
+    <view class="scroll-location-item" wx:for="{{ailist}}" >
+      <image id="{{item.location}}" mode="aspectFill" bindtap="openlocation"  class="scroll-location-image" src="{{item.path}}"></image>
+      <text class="scroll-location-text">{{item.ai}}</text>
+    </view>
+</scroll-view>
+</view>
+
+
+
+<view class="location-container"><text>地点:</text>
+<!-- <scroll-view class="scroll-location-container" scroll-x="true">
     <view class="scroll-location-item" wx:for="{{locationlist}}" >
       <image id="{{item.location}}" mode="aspectFill" bindtap="openlocation"  class="scroll-location-image" src="{{item.path}}"></image>
       <text class="scroll-location-text">{{item.location}}</text>
     </view>
-</scroll-view>
+</scroll-view> -->
+
+<view class="showed-item-container">
+  <view wx:for="{{locationlist}}" class="showed-item">
+          <image id="{{item.location}}"  mode="aspectFill"  src="{{item.path}}" class="item-img" bindtap="openlocation"></image>
+          <view class="text-container">
+          <text class="item-text">{{item.location}}</text>           
+          </view>
+  </view>
+</view>
+
 </view>
 
 <!-- <view class="event-container"><text>事件:</text>

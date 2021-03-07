@@ -16,7 +16,9 @@ Page({
     this.setData({
       albumid:options.albumid,
       sharetag:options.sharetag
+      
     })
+
     this.getalbum()
     var that=this
     wx.request({
@@ -63,6 +65,9 @@ Page({
       success(res){
         that.setData({
           album:res.data
+        })
+        wx.setNavigationBarTitle({
+          title: that.data.album.albumname,
         })
         console.log(res.data)
       }
@@ -185,54 +190,54 @@ Page({
       fail (res){console.log("失败",res.data);}
     })
   },
-  scanImageInfo: function(){
-    var that=this;
-    const detecturl="https://aip.baidubce.com/rest/2.0/image-classify/v2/advanced_general?access_token="+that.data.baidutoken;
-    //显示加载页面
-    // wx.showLoading({
-    //   title: '加载中',
-    // });
-      wx.request({
-        url: detecturl,
-        data:{
-          image:that.data.base64
-        },
-        method:"POST",
-        dataType:'json',
-        header:{
-          'content-type': 'application/x-www-form-urlencoded' 
-        },
-        success(res){
-          console.log('识别图像成功')
-          console.log(res.data.result[0].name)
-          that.setData({
-            resuledata :res.data,
-            ai:res.data.result[0].keyword
-          })
-          wx.request({
-            url:  url+'Upload/Image',
-            method:'GET',
-            data:{
-              albumid:that.data.albumid,
-              imagename:that.data.imagename,
-              path:that.data.fileID,
-              ai:that.data.ai
-            },
-            success(){
-              console.log("上传成功")
-              that.onShow()
-            }
-          })
+  // scanImageInfo: function(){
+  //   var that=this;
+  //   const detecturl="https://aip.baidubce.com/rest/2.0/image-classify/v2/advanced_general?access_token="+that.data.baidutoken;
+  //   //显示加载页面
+  //   // wx.showLoading({
+  //   //   title: '加载中',
+  //   // });
+  //     wx.request({
+  //       url: detecturl,
+  //       data:{
+  //         image:that.data.base64
+  //       },
+  //       method:"POST",
+  //       dataType:'json',
+  //       header:{
+  //         'content-type': 'application/x-www-form-urlencoded' 
+  //       },
+  //       success(res){
+  //         console.log('识别图像成功')
+  //         //console.log(res.data.result[0].name)
+  //         that.setData({
+  //           resuledata :res.data,
+  //           ai:res.data.result[0].keyword
+  //         })
+  //         wx.request({
+  //           url:  url+'Upload/Image',
+  //           method:'GET',
+  //           data:{
+  //             albumid:that.data.albumid,
+  //             imagename:that.data.imagename,
+  //             path:that.data.fileID,
+  //             ai:that.data.ai
+  //           },
+  //           success(){
+  //             console.log("上传成功")
+  //             that.onShow()
+  //           }
+  //         })
           
-        },
-        complete:res=>{
-          //隐藏加载页面
-         // wx.hideLoading()
-        }
+  //       },
+  //       complete:res=>{
+  //         //隐藏加载页面
+  //        // wx.hideLoading()
+  //       }
     
-      })
+  //     })
     
-  },
+  // },
   newimages:function(){
     var that = this;
     wx.chooseImage({

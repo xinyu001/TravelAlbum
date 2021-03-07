@@ -26,12 +26,20 @@
 </view>
 <view class="album-container" >
 <text class="text">共享相册:</text>
-<scroll-view  scroll-x="true" class="scroll-container">
+<!-- <scroll-view  scroll-x="true" class="scroll-container">
 
   <view  wx:for="{{sharealbumlist}}"  class="scroll-container-item" >
     <image  id="{{item.albumid}}" class="scroll-view-item-image" src="{{item.coverimagepath}}" bindtap="openalbum"></image>
     <text class="scroll-view-item-text">{{item.albumname}}</text>
   </view>
-
-</scroll-view>
+</scroll-view> -->
+</view>
+<!-- //test -->
+<view class="showed-item-container">
+  <view wx:for="{{sharealbumlist}}" class="showed-item">
+          <image id="{{item.albumid}}" src="{{item.coverimagepath}}" class="item-img" bindtap="openalbum" mode="aspectFill"></image>
+          <view class="text-container">
+          <text class="item-text">{{item.albumname}}</text>           
+          </view>
+  </view>
 </view>
