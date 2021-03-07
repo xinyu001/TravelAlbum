@@ -40,7 +40,7 @@ App({
     user:{},
    //url:"http://localhost:8080/",
   //  url:"http://47.119.118.195:8080/", //测试服务器地址
-       url:"http://xinyu001.top/",  //阿里云服务器地址
+       url:"https://xinyu001.top/",  //阿里云服务器地址
       ApiKey:"AXU2r8cfwGiqtQiejGTavVHh",
       SecretKey:"OX2DnpGn9QjKy9GCQUVMIFVubkMC5q5r"
 

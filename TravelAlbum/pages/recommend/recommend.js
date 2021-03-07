@@ -23,8 +23,7 @@ Page({
     // var that=this
     // setTimeout(function() {
     //   that.getuser()
-    // }, 1000) 
-    
+    // }, 1000)   
   },
   onShow(){this.getsharealbum()},
   totest: function() {

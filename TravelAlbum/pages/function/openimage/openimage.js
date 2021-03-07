@@ -38,9 +38,7 @@ Page({
       }
     }) 
   },
-
   onUnload: function () {
-
   },
   deleteimage:function(){
     var that=this
