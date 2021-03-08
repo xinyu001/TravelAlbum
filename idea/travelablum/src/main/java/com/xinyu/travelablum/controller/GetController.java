@@ -30,7 +30,7 @@ public class GetController {
         map.put("appid",appid);
         map.put("secret",secret);
         map.put("code",code);
-        String res = restTemplate.getForObject(url,String.class,map);
+            String res = restTemplate.getForObject(url,String.class,map);
         System.out.println(res);
         return res;
     }
@@ -47,7 +47,7 @@ public class GetController {
         return getService.getablums(userid);
     }
 
-    @GetMapping(value = "/ShareAlbum")//查询共享相册
+    @GetMapping(value = "/Albums")//查询共享相册
     public List<Album> GetShareAlbum() throws Exception {
         System.out.println("共享相册查询中");
         return getService.getshareablum();
