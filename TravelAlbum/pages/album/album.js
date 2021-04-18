@@ -82,7 +82,12 @@ Page({
   },
   newalbum:function(){
     wx.navigateTo({
-      url: '/pages/function/newalbum/newalbum'
+      url: '/pages/function/newalbum/newalbum?albumtype=normal'
+    })
+  },
+  newalbum2:function(){
+    wx.navigateTo({
+      url: '/pages/function/newalbum/newalbum?albumtype=share'
     })
   }
 

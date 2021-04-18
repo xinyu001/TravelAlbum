@@ -17,8 +17,8 @@ public class UploadService {
     public int newimage(String albumid, String imagename, String path,String ai) {
         return uploadMapper.newimage(albumid,imagename,path,ai);
     }
-    public int newalbum(String albumname,String userid) {
-        return uploadMapper.newalbum(albumname,userid);
+    public int newalbum(String albumname,String userid,String albumtype) {
+        return uploadMapper.newalbum(albumname,userid,albumtype);
     }
 
 }

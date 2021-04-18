@@ -2,11 +2,11 @@
 <view class="newalbum-container">
 <text>新建相册:</text>
 <view class="newalbum">
-<view class="newalbum-item left" bindtap="newalbum">
+<view id="normal" class="newalbum-item left" bindtap="newalbum">
   <image  class="newalbum-image" src="/images/icons/album.png"></image>
   <text class="newalbum-text">普通相册</text>
 </view>
-<view class="newalbum-item right" bindtap="f2" >
+<view id="share" class="newalbum-item right" bindtap="newalbum2" >
   <image  class="newalbum-image" src="/images/icons/travelablum.png"></image>
   <text class="newalbum-text">共享相册</text>
 </view>

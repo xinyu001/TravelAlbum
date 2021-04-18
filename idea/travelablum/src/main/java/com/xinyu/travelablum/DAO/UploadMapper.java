@@ -13,8 +13,10 @@ public interface UploadMapper {
     int newimage(@Param("albumid") String albumid,@Param("imagename") String imagename,
                  @Param("path") String patt,@Param("ai") String ai);
 
-    @Insert("insert into album(albumname,userid) values(#{albumname},#{userid})")
-    int newalbum(@Param("albumname") String albumname,@Param("userid") String userid);
+    @Insert("insert into album(albumname,userid,albumtype) values(#{albumname},#{userid},#{albumtype})")
+    int newalbum(@Param("albumname") String albumname,
+                 @Param("userid")String userid,
+                 @Param("albumtype") String albumtype);
 
 }
 

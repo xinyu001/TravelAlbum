@@ -2,9 +2,23 @@ var app = getApp()
 const url=app.globalData.url
 Page({
   data:{
-    value1:'',
     albumtype: ['普通相册', '共享相册'],
     typename:'普通相册',
+    type:'normal'
+  },
+  onLoad: function (options) {
+    var that=this
+    if(options.albumtype=='share'){
+    that.setData({
+      type:options.albumtype,
+      typename:'共享相册'
+    })}
+    else{
+      that.setData({
+        type:options.albumtype,
+        typename:'普通相册'
+      })
+    }
   },
   getvalue(e){
     console.log(e.detail.value)
@@ -24,7 +38,8 @@ Page({
             url: url+'Upload/Album',
             data:{
               userid:app.globalData.user.userid,
-              albumname:that.data.value1
+              albumname:that.data.value1,
+              albumtype:that.data.type
             },
             success(){
               console.log("新建成功")

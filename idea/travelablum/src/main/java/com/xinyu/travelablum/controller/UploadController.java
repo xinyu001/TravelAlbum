@@ -28,9 +28,10 @@ public class UploadController {
 
     @GetMapping(value = "/Album")
     public int UploadAlbum(@RequestParam(value = "albumname") String albumname,
-                           @RequestParam(value = "userid") String userid) throws Exception {
+                           @RequestParam(value = "userid") String userid,
+                           @RequestParam(value = "albumtype") String albumtype) throws Exception {
         System.out.println("相册新建中");
-        return uploadService.newalbum(albumname,userid);
+        return uploadService.newalbum(albumname,userid,albumtype);
     }
 
 
