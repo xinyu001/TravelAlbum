@@ -38,8 +38,8 @@ App({
     userInfo: null,
     userid:"",
     user:{},
-   url:"http://localhost:8080/",
-      //  url:"https://xinyu001.top/",  //阿里云服务器地址
+   //url:"http://localhost:8080/",  //本地服务器
+     url:"https://xinyu001.top/",  //阿里云服务器地址
       ApiKey:"AXU2r8cfwGiqtQiejGTavVHh",
       SecretKey:"OX2DnpGn9QjKy9GCQUVMIFVubkMC5q5r"
 

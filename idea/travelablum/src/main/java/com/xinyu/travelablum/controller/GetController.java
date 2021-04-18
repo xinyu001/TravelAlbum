@@ -94,6 +94,22 @@ public class GetController {
         System.out.println("查询该地点所有的图片中");
         return getService.getimagesbylocation(location,userid);
     }
+
+    @GetMapping(value = "/ImagesByAI")
+    public List<Image> GetImagesByAI(@RequestParam(value = "userid") String userid,
+                                           @RequestParam(value = "ai") String ai)throws Exception{
+        System.out.println("查询该AI所有图片中");
+        return getService.getimagesbyai(ai,userid);
+    }
+
+    @GetMapping(value = "/ImagesByLabel")
+    public List<Image> GetImagesByPeople(@RequestParam(value = "userid") String userid,
+                                           @RequestParam(value = "label") String label)throws Exception{
+        System.out.println("查询该人物所有图片中");
+        return getService.getimagesbylabel(label,userid);
+    }
+
+
 //
 //    @GetMapping(value = "/Locations")
 //    public List<String> GetLocations(@RequestParam(value = "userid") String userid)throws Exception{
@@ -107,6 +123,17 @@ public class GetController {
         return getService.getlocations(userid);
     }
 
+    @GetMapping(value = "/AIs")
+    public List<Image> GetAIs(@RequestParam(value = "userid") String userid)throws Exception{
+        System.out.println("查询所有AI识别结果中");
+        return getService.getais(userid);
+    }
+
+    @GetMapping(value = "/Labels")
+    public List<Image> GetPeoples(@RequestParam(value = "userid") String userid)throws Exception{
+        System.out.println("查询所有label中");
+        return getService.getlabels(userid);
+    }
 
 
 

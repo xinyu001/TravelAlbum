@@ -7,81 +7,58 @@ Page({
       {
         "peopleid":"1",
         "peoplename":"jack",
-        "firstimagesrc":path+"/images/photos/people/1.jpeg"
+        "path":path+"/images/photos/people/1.jpeg"
       },
       {
         "peopleid":"2",
         "peoplename":"samuel",
-        "firstimagesrc":path+"/images/photos/people/2.jpeg"
+        "path":path+"/images/photos/people/2.jpeg"
       },
       {
         "peopleid":"3",
         "peoplename":"rose",
-        "firstimagesrc":path+"/images/photos/people/3.jpeg"
+        "path":path+"/images/photos/people/3.jpeg"
       },
       {
         "peopleid":"4",
         "peoplename":"kitty",
-        "firstimagesrc":path+"/images/photos/people/4.jpeg"
+        "path":path+"/images/photos/people/4.jpeg"
       },
       {
         "peopleid":"5",
         "peoplename":"joy",
-        "firstimagesrc":path+"/images/photos/people/5.jpeg"
+        "path":path+"/images/photos/people/5.jpeg"
       },
     ],
-    "ailist":[
-      {
-        "ai":"天空",
-        "path":path+"/images/photos/ai/天空.jpeg",
-      },
-      {
-        "ai":"风景",
-        "path":path+"/images/photos/ai/风景.jpeg",
-      },
-      {
-        "ai":"合照",
-        "path":path+"/images/photos/ai/合照.jpeg",
-      },
-      {
-        "ai":"建筑",
-        "path":path+"/images/photos/ai/建筑.jpeg",
-      },
-    ],
+    // "ailist":[
+    //   {
+    //     "ai":"天空",
+    //     "path":path+"/images/photos/ai/天空.jpeg",
+    //   },
+    //   {
+    //     "ai":"风景",
+    //     "path":path+"/images/photos/ai/风景.jpeg",
+    //   },
+    //   {
+    //     "ai":"合照",
+    //     "path":path+"/images/photos/ai/合照.jpeg",
+    //   },
+    //   {
+    //     "ai":"建筑",
+    //     "path":path+"/images/photos/ai/建筑.jpeg",
+    //   },
+    // ],
     "locationlist":[],
-    "eventlist":[
-      {
-        "eventid":"1",
-        "eventname":"事件1",
-        "firstimagesrc":path+"/images/photos/1.jpeg"
-      },
-      {
-        "eventid":"2",
-        "eventname":"事件2",
-        "firstimagesrc":path+"/images/photos/2.jpeg"
-      },
-      {
-        "eventid":"3",
-        "eventname":"123",
-        "firstimagesrc":path+"/images/photos/3.jpeg"
-      },
-      {
-        "eventid":"4",
-        "eventname":"事件4",
-        "firstimagesrc":path+"/images/photos/4.jpeg"
-      },
-      {
-        "eventid":"5",
-        "eventname":"游玩",
-        "firstimagesrc":path+"/images/photos/5.jpeg"
-      },
-    ]
   },
   onLoad(){
     this.getlocations()
+    this.getais()
+    this.getlabels()
   },
   onShow(){
     this.getlocations()
+    this.getais()
+    this.getlabels()
   },
   getlocations:function () {
     var that=this
@@ -99,10 +76,55 @@ Page({
       }
     }) 
   },
+  getais:function () {
+    var that=this
+    wx.request({
+      url: url+'Get/AIs',
+      method:'GET',
+      data: {
+        userid:app.globalData.user.userid
+      },
+      success(res){
+        that.setData({
+          ailist:res.data
+        })
+        console.log(res.data)
+      }
+    }) 
+  },
+  getlabels:function () {
+    var that=this
+    wx.request({
+      url: url+'Get/Labels',
+      method:'GET',
+      data: {
+        userid:app.globalData.user.userid
+      },
+      success(res){
+        that.setData({
+          labellist:res.data
+        })
+        console.log(res.data)
+      }
+    }) 
+  },
   openlocation:function(item){
     console.log(item.target.id)
     wx.navigateTo({
       url: '/pages/function/openlocation/openlocation?location='+item.target.id
     })
+  },
+  openai:function(item){
+    console.log(item.target.id)
+    wx.navigateTo({
+      url: '/pages/function/openai/openai?ai='+item.target.id
+    })
+  },
+  openlabel:function(item){
+    console.log(item.target.id)
+    wx.navigateTo({
+      url: '/pages/function/openlabel/openlabel?label='+item.target.id
+    })
   }
+
 })

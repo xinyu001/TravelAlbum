@@ -12,7 +12,10 @@
     "pages/function/albumsetting/albumsetting",
     "pages/function/setimage/setimage",
     "pages/function/openlocation/openlocation",
-    "pages/function/openlocationimage/openlocationimage"
+    "pages/function/openlocationimage/openlocationimage",
+    "pages/function/openai/openai",
+    "pages/function/openlabel/openlabel"
+
   ],
   "window":{
     "backgroundTextStyle":"light",

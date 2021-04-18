@@ -58,12 +58,34 @@ public class GetService {
             imagelist.add(getMapper.getimagebylocation(attribute,userid));
 
         }
-
             return imagelist;
-
-
-
     }
+    public List<Image> getais(String userid){
+        List<String> list=getMapper.getais(userid);
+        System.out.println(list);
+        List<Image> imagelist=new ArrayList<Image>();
+
+        for(String attribute : list) {
+            //        System.out.println(attribute);
+            imagelist.add(getMapper.getimagebyai(attribute,userid));
+
+        }
+        return imagelist;
+    }
+    public List<Image> getlabels(String userid){
+        List<String> list=getMapper.getlabels(userid);
+        System.out.println(list);
+        List<Image> imagelist=new ArrayList<Image>();
+
+        for(String attribute : list) {
+            //        System.out.println(attribute);
+            imagelist.add(getMapper.getimagebylabel(attribute,userid));
+
+        }
+        return imagelist;
+    }
+
+
 
     public Image getimagebylocation(String location,String userid){
         return getMapper.getimagebylocation(location,userid);
@@ -71,6 +93,14 @@ public class GetService {
     public List<Image> getimagesbylocation(String location,String userid){
      //   System.out.println(location+userid);
         return getMapper.getimagesbylocation(location,userid);
+    }
+    public List<Image> getimagesbyai(String ai,String userid){
+
+        return getMapper.getimagesbyai(ai,userid);
+    }
+    public List<Image> getimagesbylabel(String label,String userid){
+
+        return getMapper.getimagesbylabel(label,userid);
     }
 
 //    public List<AI> getailist(String userid) {

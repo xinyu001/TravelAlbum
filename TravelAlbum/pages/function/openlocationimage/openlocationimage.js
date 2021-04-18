@@ -16,8 +16,7 @@ Page({
        wx.cloud.init()
       this.setData({
         imageid:options.imageid,
-        albumid:options.albumid,
-        sharetag:options.sharetag
+
       })
       console.log(this.data.imageid)
       this.getimage()
@@ -63,20 +62,7 @@ Page({
       url: '/pages/function/setimage/setimage?imageid='+this.data.imageid,
     })
   },
-  setcoverimage:function(){
-    var that=this
-    wx.request({
-      url: url+"Set/CoverImage",
-      method:'GET',
-      data:{
-        albumid:that.data.albumid,
-        coverimagepath:that.data.image.path
-      },
-      success(){
-        console.log('设置成功')
-      }
-    })
-  },
+
   downloadimage:function(){
    var that=this
     wx.getSetting({
