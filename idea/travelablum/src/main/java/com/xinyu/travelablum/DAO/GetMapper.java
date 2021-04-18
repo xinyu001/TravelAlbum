@@ -37,13 +37,13 @@ public interface GetMapper {
         @Insert("insert into user(openid) value(#{openid})")
         int newuser(@Param(value ="openid") String openid);
 
-        @Select("select DISTINCT location from image where location<>'' and albumid in (SELECT albumid from album where userid=#{userid} and status='normal')and status='normal'")
+        @Select("select DISTINCT location from image where location<>'' and location<>'null' and albumid in (SELECT albumid from album where userid=#{userid} and status='normal')and status='normal'")
         List<String> getlocations(@Param(value = "userid") String userid);
 
-        @Select("select DISTINCT ai from image where ai<>'' and albumid in (SELECT albumid from album where userid=#{userid} and status='normal')and status='normal'")
+        @Select("select DISTINCT ai from image where ai<>'' and ai<>'null' and albumid in (SELECT albumid from album where userid=#{userid} and status='normal')and status='normal'")
         List<String> getais(@Param(value = "userid") String userid);
 
-        @Select("select DISTINCT label from image where label<>'' and label<>'null'and albumid in (SELECT albumid from album where userid=#{userid} and status='normal')and status='normal'")
+        @Select("select DISTINCT label from image where label<>'' and label<>'null' and albumid in (SELECT albumid from album where userid=#{userid} and status='normal')and status='normal'")
         List<String> getlabels(@Param(value = "userid") String userid);
 
 
