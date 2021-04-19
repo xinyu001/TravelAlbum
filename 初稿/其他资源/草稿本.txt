@@ -1,0 +1,69 @@
+download(e) {
+    console.log('e',e.currentTarget.dataset.img)
+    let fileUrl = e.currentTarget.dataset.img
+    wx.cloud.downloadFile({
+      fileID: fileUrl,
+      success: res => {
+        console.log('下载成功', res)
+        this.saveImage(res.tempFilePath)
+      },
+      fail: res => {
+        console.log('下载失败', res)
+      }
+    })
+  },
+  // 保存图片到相册
+  saveImage(imgUrl){
+    wx.saveImageToPhotosAlbum({
+      filePath:imgUrl,
+      success(res) { },
+      fail(res) {
+        console.log('保存失败', res)
+      }
+    })
+  }
+})
+
+
+
+
+
+
+  <swiper indicator-dots="{{indicatorDots}}"
+        autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+        <block wx:for="{{background}}" wx:key="*this">
+          <swiper-item>
+            <view class="swiper-item {{item}}"></view>
+          </swiper-item>
+        </block>
+      </swiper>
+
+
+
+
+
+
+
+ wx.cloud.init()
+        wx.cloud.uploadFile({
+          cloudPath:  "images/photos/"+app.globalData.user.userid+'/'+that.data.imagename,  
+          filePath: that.data.ImageTemPath, // 小程序临时文件路径
+          success: res => {
+            console.log(res.fileID)
+            that.setData({
+              fileID:res.fileID,
+            })
+            wx.getFileSystemManager().readFile({
+              filePath: that.data.ImageTemPath,
+              encoding:'base64',
+              success: res=>{
+                that.data.base64=res.data
+                that.scanImageInfo()
+              }
+            })
+
+          }
+        })
+
+      }
+    })
